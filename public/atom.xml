@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title type="text">Gopher</title>
+    <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
+    <updated>2021-04-12T05:08:25+08:00</updated>
+    <id>http://lt7.top/</id>
+    <link rel="alternate" type="text/html" href="http://lt7.top/" />
+    <link rel="self" type="application/atom+xml" href="http://lt7.top/atom.xml" />
+    <author>
+            <name>lintao</name>
+            <uri>http://lt7.top/</uri>
+            
+                <email>mrqter@gmail.com</email>
+            </author>
+    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
+    <generator uri="https://gohugo.io/" version="0.82.0">Hugo</generator>
+        <entry>
+            <title type="text">OpenApi3.0</title>
+            <link rel="alternate" type="text/html" href="http://lt7.top/posts/openapi3.0/" />
+            <id>http://lt7.top/posts/openapi3.0/</id>
+            <updated>2021-04-12T05:03:17+08:00</updated>
+            <published>2018-03-27T21:46:00+08:00</published>
+            <author>
+                    <name>lintao</name>
+                    <uri>https://lintao.wiki/</uri>
+                    <email>mrqter@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[OpenAPI3.0是OpenApi规范的最新版本,openapi3完整语法参考,现在大多数应用只支持2.0规范，可以在这里查看2.0
+文档结构 整个Openapi文档由下列字段组成，openapi,info,paths对象想都是必选，其他字段都是可选。
+   字段名 类型 描述     openapi string 描述openapi使用的版本   info Info Object 文档信息   servers Server Object 用于描述接口地址   paths Paths Object api的路径描述   components Components Object 定义模型，对象重用   security Security Requirement]    tags Tag Object] 定义标签，可以将不同路径下同一标签的api集合显示   externalDocs External Documentation Object 外部文档    定义文档信息 openapi: 3.]]></summary>
+            
+                <content type="html"><![CDATA[<p>OpenAPI3.0是OpenApi规范的最新版本,<a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md">openapi3完整语法参考</a>,现在大多数应用只支持2.0规范，可以在这里查看2.0</p>
+<h3 id="文档结构">文档结构</h3>
+<p>整个Openapi文档由下列字段组成，openapi,info,paths对象想都是必选，其他字段都是可选。</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openapi</td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">描述openapi使用的版本</td>
+</tr>
+<tr>
+<td>info</td>
+<td style="text-align:center">Info Object</td>
+<td style="text-align:center">文档信息</td>
+</tr>
+<tr>
+<td>servers</td>
+<td style="text-align:center">Server Object</td>
+<td style="text-align:center">用于描述接口地址</td>
+</tr>
+<tr>
+<td>paths</td>
+<td style="text-align:center">Paths Object</td>
+<td style="text-align:center">api的路径描述</td>
+</tr>
+<tr>
+<td>components</td>
+<td style="text-align:center">Components Object</td>
+<td style="text-align:center">定义模型，对象重用</td>
+</tr>
+<tr>
+<td>security</td>
+<td style="text-align:center">Security Requirement]</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>tags</td>
+<td style="text-align:center">Tag Object]</td>
+<td style="text-align:center">定义标签，可以将不同路径下同一标签的api集合显示</td>
+</tr>
+<tr>
+<td>externalDocs</td>
+<td style="text-align:center">External Documentation Object</td>
+<td style="text-align:center">外部文档</td>
+</tr>
+</tbody>
+</table>
+<h3 id="定义文档信息">定义文档信息</h3>
+<pre><code>openapi: 3.0.0
+info:
+  description: 文档描述支持部分markdown语法，例如
+   ![百度](http://www.baidu.com) 
+  version: &quot;1.0.0&quot;
+  title: OpenApi 3.0
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html
+
+</code></pre><p>####OpenAPI规范的版本号
+在2.0我们使用<code>swagger: &quot;2.0&quot;</code>描述API文档所使用的OpenApi版本，在3.0之后将改为<code>openapi: 3.0.0</code></p>
+<p>####API描述信息
+<code>info</code>对象用于描述文档当信息。</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th style="text-align:center">类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td style="text-align:center"><code>string</code></td>
+<td>文档标题，必填字段</td>
+</tr>
+<tr>
+<td>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td>文档描述，这个字段支持CommonMark语法</td>
+</tr>
+<tr>
+<td>termsOfService</td>
+<td style="text-align:center"><code>string</code></td>
+<td>API的服务条款的网址。 必须采用URL格式。</td>
+</tr>
+<tr>
+<td>contact</td>
+<td style="text-align:center">Contact Object</td>
+<td>文档作者的联系方式</td>
+</tr>
+<tr>
+<td>license</td>
+<td style="text-align:center">License Object</td>
+<td>API的许可证信息。</td>
+</tr>
+<tr>
+<td>version</td>
+<td style="text-align:center"><code>string</code></td>
+<td>文档版本，必填字段</td>
+</tr>
+</tbody>
+</table>
+<p><code>Contact</code></p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th style="text-align:center">类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td style="text-align:center"><code>string</code></td>
+<td>联系人名</td>
+</tr>
+<tr>
+<td>url</td>
+<td style="text-align:center"><code>string</code></td>
+<td>联系人网址</td>
+</tr>
+<tr>
+<td>email</td>
+<td style="text-align:center"><code>string</code></td>
+<td>联系人的邮件地址</td>
+</tr>
+</tbody>
+</table>
+<p><code>license</code></p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th style="text-align:center">类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td style="text-align:center"><code>string</code></td>
+<td>必填字段，许可名称</td>
+</tr>
+<tr>
+<td>url</td>
+<td style="text-align:center"><code>string</code></td>
+<td>用于该API的许可证的URL。 必须采用URL格式</td>
+</tr>
+</tbody>
+</table>
+<h4 id="定义服务器地址">定义服务器地址</h4>
+<p><code>servers</code>关键词是3.0新增特性，通过servers关键词我们可以定义多个服务器地址方便切换测试环境和生成环境<a href="https://swagger.io/docs/specification/api-host-and-base-path/">更多参考</a></p>
+<p><img src="media/15222430425205.jpg" alt=""></p>
+<pre><code>servers:
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.example.com
+    description: Optional server description, e.g. Internal staging server for testing
+        
+</code></pre><h3 id="定义api路径">定义API路径</h3>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ref</td>
+<td style="text-align:center"><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>summary</td>
+<td style="text-align:center"><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>get</td>
+<td style="text-align:center">Operation Object</td>
+<td></td>
+</tr>
+<tr>
+<td>put</td>
+<td style="text-align:center">Operation Object</td>
+<td></td>
+</tr>
+<tr>
+<td>post</td>
+<td style="text-align:center">Operation Object</td>
+<td></td>
+</tr>
+<tr>
+<td>delete</td>
+<td style="text-align:center">Operation Object</td>
+<td></td>
+</tr>
+<tr>
+<td>options</td>
+<td style="text-align:center">Operation Object</td>
+<td></td>
+</tr>
+<tr>
+<td>head</td>
+<td style="text-align:center">Operation Object</td>
+<td></td>
+</tr>
+<tr>
+<td>patch</td>
+<td style="text-align:center">Operation Object</td>
+<td></td>
+</tr>
+<tr>
+<td>trace</td>
+<td style="text-align:center">Operation Object</td>
+<td></td>
+</tr>
+<tr>
+<td>servers</td>
+<td style="text-align:center">Server Object</td>
+<td></td>
+</tr>
+<tr>
+<td>parameters</td>
+<td style="text-align:center">Parameter Object</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tags</td>
+<td style="text-align:center">[<code>string</code>]</td>
+<td></td>
+</tr>
+<tr>
+<td>summary</td>
+<td style="text-align:center"><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>externalDocs</td>
+<td style="text-align:center">[External Documentation Object]</td>
+<td></td>
+</tr>
+<tr>
+<td>operationId</td>
+<td style="text-align:center"><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>parameters</td>
+<td style="text-align:center">Parameter Object</td>
+<td></td>
+</tr>
+<tr>
+<td>requestBody</td>
+<td style="text-align:center">Request Body Object</td>
+<td>.</td>
+</tr>
+<tr>
+<td>responses</td>
+<td style="text-align:center">Responses Object</td>
+<td><strong>REQUIRED</strong>. callbacks</td>
+</tr>
+<tr>
+<td>deprecated</td>
+<td style="text-align:center"><code>boolean</code></td>
+<td></td>
+</tr>
+<tr>
+<td>security</td>
+<td style="text-align:center">Security Requirement Object</td>
+<td></td>
+</tr>
+<tr>
+<td>servers</td>
+<td style="text-align:center">Server Object</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>paths对象用于定义api中的各个路径，一份openap文档必须有一个paths对象，最简单的例子如下:</p>
+<pre><code>paths:
+  /users:
+    get:
+      tags:
+        - user
+      summary: get user list
+      operationId: getUsers
+      parameters: 
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: offset 
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+</code></pre><p><code>paths</code>中每个路径以/开头，路径必须有一<code>responses</code>属性。在同一路径下不同操作定义如下:</p>
+<pre><code> /users:
+    get:
+      tags:
+        - user
+      responses:
+        '200':
+    post: 
+      tags:
+        - user
+      responses:
+        '200':
+    delete: 
+       tags:
+        - user
+      responses:
+        '200':
+    put: 
+      tags:
+        - user  
+      responses:
+        '200':
+</code></pre><p>在2.0我们可以用<code>Consumes, Produces</code>来定义请求或者响应的数据格式，在3.0中我们统一使用关键字<code>content</code>定义数据格式</p>
+<pre><code>/user:
+    post:
+      tags:
+        - user
+      summary: Create user
+      description:
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: Created user object
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+      
+</code></pre><p><code>components</code>对象替换掉2.0中的<code>definitions</code>，并规范了对象的重用。</p>
+<p>####路径</p>
+<ul>
+<li>paths定义了API中的各个路径,以及这些路径的HTTP方法。 例如，GET /user 可以描述为：</li>
+</ul>
+<pre><code>paths:
+  /users:
+    get:
+  /user/{id}:
+    put:
+</code></pre><ul>
+<li>在同一路径下不同的操作</li>
+</ul>
+<p><strong>正确方式</strong></p>
+<pre><code>paths:
+  /users:
+    get:
+    put:
+    post:
+</code></pre><p><strong>错误方式</strong></p>
+<pre><code>paths:
+  /users:
+    get:
+  /users:
+    post:
+</code></pre><p>####请求参数
+请求参数可以通过拼接路径/users/{userId}，查询字符串(/users?role=admin),将参数放到请求头X-CustomHeader: Value，你可以定义参数数据类型，格式。</p>
+<ul>
+<li>拼接路径参数 <code>GET /users/2</code></li>
+</ul>
+<pre><code>paths:
+  /user/{userId}:
+    get:
+      summary: Returns a user by ID.
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: Parameter description in CommonMark or HTML.
+          schema:
+            type : integer
+            format: int64
+            minimum: 1
+</code></pre><ul>
+<li>查询参数 <code>GET /users?role=value</code></li>
+</ul>
+<pre><code>paths:
+  /users:
+    get:
+      parameters:
+        - in: query
+          name: role
+          schema:
+            type: string
+            enum: [user, poweruser, admin]
+          required: true
+</code></pre><ul>
+<li>将请求参数放到请求头</li>
+</ul>
+<pre><code>paths:
+  /user:
+    get:
+      summary: Checks if the server is alive
+      parameters:
+        - in: header
+          name: X-Request-ID
+          schema:
+            type: string
+            format: uuid
+          required: true
+</code></pre><ul>
+<li>将请求参数放到request body，可以通过关键字requestBody来描述body的内容,在content关键词下定义Media Type</li>
+</ul>
+<pre><code>application/json
+application/xml
+application/x-www-form-urlencoded
+multipart/form-data
+text/plain; charset=utf-8
+text/html
+application/pdf
+image/png
+</code></pre><pre><code>/user:
+  post:
+    summary: 创建一个用户
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+</code></pre><ul>
+<li>文件上传</li>
+</ul>
+<pre><code>/file:
+  post:
+      summary: 文件上传.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                fileName:
+                  type: integer
+                file:
+                  type: string
+                  format: binary
+</code></pre><p>####返回值</p>
+<p>API规范需要指定所有API操作的Responses。 每个操作必须至少定义一个Responses，通常是成功的Responses。 Responses由其HTTP状态代码和Responses正文和/或标题中返回的数据定义。
+这是一个最简单的例子:</p>
+<pre><code>paths:
+  /ping:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: pong
+</code></pre><p>API可以用各种数据类型(json/xml)进行响应。 JSON是数据交换中最常用的格式，但不是唯一可能的格式。</p>
+<p>要指定Response的数据类型，在content关键字下说明。</p>
+<pre><code>paths:
+  /users:
+    get:
+      summary: Get all users
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfUsers'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ArrayOfUsers'
+            text/plain:
+              schema:
+                type: string
+
+  # This operation returns image
+  /logo:
+    get:
+      summary: Get the logo image
+      responses:
+        '200':
+          description: Logo image in PNG format
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+</code></pre><p>####HTTP Status Codes
+在Response下，每个Response定义以状态码（例如200或404）开始。操作通常会返回一个成功的状态码和一个或多个错误状态。 要定义一系列Response代码，您可以使用以下范围定义：1XX，2XX，3XX，4XX和5XX。 如果使用显式代码定义响应范围，则显式代码定义优先于该代码的范围定义。</p>
+<pre><code>responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+</code></pre><p>####Response Headers</p>
+<p>来自API的响应可以包含自定义标题，以提供有关API调用结果的附加信息。 例如，限速API可以通过响应标头提供速率限制状态，如下所示：</p>
+<pre><code>HTTP 1/1 200 OK
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 99
+X-RateLimit-Reset: 2016-10-12T11:00:00Z
+
+{ ... }
+</code></pre><p>你可以像这样定义响应headers</p>
+<pre><code>paths:
+  /ping:
+    get:
+      summary: Checks if the server is alive.
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+              description: Request limit per hour.
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+              description: The number of requests left for the time window.
+            X-RateLimit-Reset:
+              schema:
+                type: string
+                format: date-time
+              description: The UTC date/time at which the current rate limit window resets.
+</code></pre><p>####Response Body
+schema关键字用于描述Response Body，schema可以这样定义：</p>
+<ul>
+<li>用一个 object或者 array ,通常用于JSON或者XML</li>
+<li>原始数据类型，如数字或字符串 - 用于纯文本响应，</li>
+<li>一个文件</li>
+</ul>
+<pre><code>responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  username:
+                    type: string
+                    description: The user name. 
+</code></pre><p>####重用
+如果多个操作返回相同的响应（状态码和数据），则可以在全局components对象的响应部分中定义它，然后通过$ref在操作级别引用该定义。 这对于具有相同状态代码和响应主体的错误响应非常有用</p>
+<pre><code>responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+components:
+  schemas:
+    user:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        password:
+          type: string
+          description: 密码
+        name:
+          type: string
+          description: 用户
+        avator:
+          type: string
+          description: 头像
+          default: xxxx
+</code></pre><ul>
+<li>在请求时我们也可以使用定义好的schema:</li>
+</ul>
+<pre><code>post:
+      summary: 创建用户.
+      tags:
+        - 用户
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        '200':
+          description: 操作结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+</code></pre>]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">OpenApi2.0</title>
+            <link rel="alternate" type="text/html" href="http://lt7.top/posts/openapi2.0/" />
+            <id>http://lt7.top/posts/openapi2.0/</id>
+            <updated>2021-04-12T05:03:17+08:00</updated>
+            <published>2018-03-27T21:45:57+08:00</published>
+            <author>
+                    <name>lintao</name>
+                    <uri>https://lintao.wiki/</uri>
+                    <email>mrqter@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[什么是OpenApi规范？ OpenApi规范是一套用语描述REST API的描述格式，分为以下几点
+ 描述每个路径上的操作 GET POST DELETE 请求参数和返回值 认证方法 联系信息，许可证，使用条款和其他信息  API规范可以用YAML或JSON编写。该格式对人和机器都很容易学习和阅读。
+OpenApi当前版本是3.0，本文将描述OpenApi2.0规范 可以在这里查看完整规范https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md
+本文将用一个YAML格式的例子向你描述如何编写OpenApi2.0文档
+文档信息描述 swagger: &quot;2.0&quot; info: title: Sample API description: API description in Markdown. version: 1.0.0 host: api.example.com basePath: /v1 schemes: - https swagger: &quot;2.0&quot; 说明当前使用的OpenApi版本，（Openapi 2.0是用swagger2.0标准演化而来）
+info对象将描述本文的信息，下表是info对象的所有可用字段
+   字段 类型 描述     title String 本文标题   description String 本文的描述信息   termsOfService String API的服务条款   contact Object 联系方式对象   license Object 许可证对象   version String 版本    contact 对象用于描述本文作者联系方式]]></summary>
+            
+                <content type="html"><![CDATA[<h2 id="什么是openapi规范">什么是OpenApi规范？</h2>
+<p>OpenApi规范是一套用语描述REST API的描述格式，分为以下几点</p>
+<ul>
+<li>描述每个路径上的操作 GET POST DELETE</li>
+<li>请求参数和返回值</li>
+<li>认证方法</li>
+<li>联系信息，许可证，使用条款和其他信息</li>
+</ul>
+<p>API规范可以用YAML或JSON编写。该格式对人和机器都很容易学习和阅读。</p>
+<p>OpenApi当前版本是3.0，本文将描述OpenApi2.0规范
+可以在这里查看完整规范https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md</p>
+<p>本文将用一个YAML格式的例子向你描述如何编写OpenApi2.0文档</p>
+<h3 id="文档信息描述">文档信息描述</h3>
+<pre><code>swagger: &quot;2.0&quot;
+info:
+  title: Sample API
+  description: API description in Markdown.
+  version: 1.0.0
+
+host: api.example.com
+basePath: /v1
+schemes:
+  - https
+</code></pre><p><code>swagger: &quot;2.0&quot;</code> 说明当前使用的OpenApi版本，（Openapi 2.0是用swagger2.0标准演化而来）</p>
+<p><code>info</code>对象将描述本文的信息，下表是info对象的所有可用字段</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>本文标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>本文的描述信息</td>
+</tr>
+<tr>
+<td>termsOfService</td>
+<td>String</td>
+<td>API的服务条款</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>Object</td>
+<td>联系方式对象</td>
+</tr>
+<tr>
+<td>license</td>
+<td>Object</td>
+<td>许可证对象</td>
+</tr>
+<tr>
+<td>version</td>
+<td>String</td>
+<td>版本</td>
+</tr>
+</tbody>
+</table>
+<p><code>contact</code> 对象用于描述本文作者联系方式</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>本文作者名称</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>本文作者的网站</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>本文作者的邮件</td>
+</tr>
+</tbody>
+</table>
+<p><code>license</code> 对象用于描述本文遵循的协议</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>协议名称</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>协议URL</td>
+</tr>
+</tbody>
+</table>
+<p><code>host</code> 用于描述api的服务器地址，在host中不用填写路径，但是要包括服务所用到的端口号</p>
+<p><code>basePath</code> 用于描述api的基础路径，例如/v1/api</p>
+<p><code>schemes</code> 用于描述使用的传输协议例如<code>http/htttps</code></p>
+<p><code>paths</code>定义了api中每个路径以及这些路径下的的操作方法（GET,POST),如果我们想在users路径下定义一个GET方法，我们可以像下面这样。</p>
+<pre><code>paths:
+  /users:
+    get:
+      tags:
+        - pets
+      summary: Returns a list of users.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+</code></pre><p><code>tags</code> 关键词可以将多个路径组成一个群组显示，我们可以在全局定义<code>tags</code>关键词</p>
+<pre><code>tags:
+  - name: pets
+    description: Everything about your Pets
+    externalDocs:
+      url: http://docs.my-api.com/pet-operations.htm
+  - name: store
+    description: Access to Petstore orders
+    externalDocs:
+      url: http://docs.my-api.com/store-orders.htm
+</code></pre><h3 id="请求参数">请求参数</h3>
+<p>向服务器发起请求时我们以不同的方式提交数据给服务器，</p>
+<ul>
+<li>查询参数: /users?role=admin</li>
+<li>路径参数: /users/{id}</li>
+<li>请求头参数: X-MyHeader: Value</li>
+<li>Request Body 在POST或者PUT请求时上传一段JSON或者XML类型的参数</li>
+<li>form 参数：当Content-Type为application/x-www-form-urlencoded 或者 multipart/form-data</li>
+</ul>
+<h5 id="路径参数">路径参数</h5>
+<pre><code>paths:
+  /users/{userId}:
+    get:
+      summary: Returns a user by ID.
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        200:
+          description: OK
+</code></pre><h5 id="查询参数">查询参数</h5>
+<pre><code>paths:
+  /users/{userId}:
+    get:
+        parameters:
+            - in: query
+            name: offset
+            type: integer
+            description: The number of items to skip before starting to collect the result set.
+            - in: query
+            name: limit
+            type: integer
+            description: The numbers of items to return.    
+            
+</code></pre><h5 id="request-body">Request Body</h5>
+<p>我们可以根据<code>Consumes, Produces</code>关键词描述将要传输的数据格式。例如:</p>
+<pre><code>consumes:
+  - application/json
+  - application/xml
+produces:
+  - application/json
+  - application/xml
+</code></pre><pre><code>paths:
+  /users:
+    post:
+      summary: Creates a new user.
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: user
+          description: The user to create.
+          schema:
+            type: object
+            required:
+              - userName
+            properties:
+              userName:
+                type: string
+              firstName:
+                type: string
+              lastName:
+                type: string
+      responses:
+        201:
+          description: Created
+</code></pre><h5 id="请求头参数">请求头参数</h5>
+<pre><code>paths:
+  /ping:
+    get:
+      summary: Checks if the server is alive.
+      parameters:
+        - in: header
+          name: X-Request-ID
+          type: string
+          required: true
+</code></pre><h5 id="form参数">Form参数</h5>
+<pre><code>paths:
+  /survey:
+    post:
+      summary: A sample survey.
+      consumes:
+        - application/x-www-form-urlencoded
+      parameters:
+        - in: formData
+          name: name
+          type: string
+          description: A person's name.
+        - in: formData
+          name: fav_number
+          type: number
+          description: A person's favorite number.
+      responses:
+        200:
+          description: OK
+</code></pre><p>在同一个路径下定义不同的方法</p>
+<pre><code>paths:
+  /user/{id}:
+    parameters:
+      - in: path
+        name: id
+        type: integer
+        required: true
+        description: The user ID.
+    get:
+      summary: Gets a user by ID.
+    patch:
+      summary: Updates an existing user with the specified ID.
+    delete:
+      summary: Deletes the user with the specified ID.
+
+</code></pre><p>在定义参数时我们可以将某个参数定义为是否可选通过<code>required: true</code>,参数的默认值<code>default: 0</code>,我们还可以定义参数值的范围 <code>minimum: 1 maximum: 100</code></p>
+<h3 id="响应">响应</h3>
+<p><code>responses</code>对象用于定义响应的内容，响应包括Response Body，HTTP Status Codes，Response Headers,每一个API都必须有一个responses，最基础的定义如下:</p>
+<pre><code>paths:
+  /ping:
+    get:
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+</code></pre><h5 id="http-status-codes">HTTP Status Codes</h5>
+<pre><code>
+responses:
+        200:
+          description: OK
+        400:
+          description: Bad request. User ID must be an integer and bigger than 0.
+        401:
+          description: Authorization information is missing or invalid.
+        404:
+          description: A user with the specified ID was not found.
+          
+</code></pre><h5 id="response-body">Response Body</h5>
+<pre><code>responses:
+        200:
+          description: A User object
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+                description: The user ID.
+              username:
+                type: string
+                description: The user name.
+</code></pre><h5 id="response-header">Response Header</h5>
+<pre><code>
+paths:
+  /ping:
+    get:
+      summary: Checks if the server is alive.
+      responses:
+        200:
+          description: OK
+          headers:
+            X-RateLimit-Limit:
+              type: integer
+              description: Request limit per hour.
+            X-RateLimit-Remaining:
+              type: integer
+              description: The number of requests left for the time window.
+            X-RateLimit-Reset:
+              type: string
+              format: date-time
+              description: The UTC date/time at which the current rate limit window resets.
+              
+</code></pre><h3 id="对象重用">对象重用</h3>
+<p>我们可以通过全局关键词<code>definitions</code> 定义一个可重用的对象，然后使用<code>$ref</code>引用这个对象,例如:</p>
+<pre><code>paths:
+  /users:
+    post:
+      summary: Creates a new user.
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: user
+          description: The user to create.
+          schema:
+            $ref: &quot;#/definitions/User&quot;     # &lt;----------
+     responses:
+         200:
+           description: OK
+definitions:
+  User:           # &lt;----------
+    type: object
+    required:
+      - userName
+    properties:
+      userName:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+</code></pre><p>我们也可以在响应中这样使用</p>
+<pre><code>paths:
+  /users:
+    get:
+      summary: Gets a list of users.
+      response:
+        200:
+          description: OK
+          schema:
+            $ref: &quot;#/definitions/ArrayOfUsers&quot;
+        401:
+          $ref: &quot;#/responses/Unauthorized&quot;   # &lt;-----
+  /users/{id}:
+    get:
+      summary: Gets a user by ID.
+      response:
+        200:
+          description: OK
+          schema:
+            $ref: &quot;#/definitions/User&quot;
+        401:
+          $ref: &quot;#/responses/Unauthorized&quot;   # &lt;-----
+        404:
+          $ref: &quot;#/responses/NotFound&quot;       # &lt;-----
+# Descriptions of common responses
+responses:
+  NotFound:
+    description: The specified resource was not found
+    schema:
+      $ref: &quot;#/definitions/Error&quot;
+  Unauthorized:
+    description: Unauthorized
+    schema:
+      $ref: &quot;#/definitions/Error&quot;
+definitions:
+  # Schema for error response body
+  Error:
+    type: object
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - message
+</code></pre><p>在定义对象时我们可以对属性添加一个示例值</p>
+<p>对象</p>
+<pre><code>definitions:
+  CatalogItem:
+    id:
+      type: integer
+      example: 38
+    title:
+      type: string
+      example: T-shirt
+    image:
+      type: object
+      properties:
+        url:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+      required:
+        - url
+      example:   # &lt;-----
+        url: images/38.png
+        width: 100
+        height: 100
+    required:
+      - id
+      - title
+</code></pre><p>数组</p>
+<pre><code>definitions:
+  ArrayOfStrings:
+    type: array
+    items:
+      type: string
+    example:
+      - foo
+      - bar
+      - baz
+</code></pre><p>数组中嵌套的对象可以直接引用另一个已经定义好的对象</p>
+<pre><code>definitions:
+  ArrayOfCatalogItems:
+    type: array
+    items:
+      $ref: &quot;#/definitions/CatalogItem&quot;
+    example:
+      - id: 38
+        title: T-shirt
+      - id: 114
+        title: Phone
+</code></pre>]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">使用Swagger生成API文档</title>
+            <link rel="alternate" type="text/html" href="http://lt7.top/posts/%E4%BD%BF%E7%94%A8swagger%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/" />
+            <id>http://lt7.top/posts/%E4%BD%BF%E7%94%A8swagger%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/</id>
+            <updated>2021-04-12T05:03:17+08:00</updated>
+            <published>2018-03-18T21:04:40+08:00</published>
+            <author>
+                    <name>lintao</name>
+                    <uri>https://lintao.wiki/</uri>
+                    <email>mrqter@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[swagger是一个款强大的API文档生成工具集，他分为swagger-ui，swagger-codegen，swagger-editor。通过这三个工具我们可以编写非常完善Restful API文档。
+####swagger-ui swagger-ui顾名思义这个工具就是用来显示编写好的api文档，这个工具通过解析编写好的json文档显示一个web页面。 通过docker安装
+docker pull swaggerapi/swagger-ui docker run -p 80:8080 swaggerapi/swagger-ui ###swagger-editor swagger-editor是一个编辑器，可以实时预览修改结果,不过这编辑器对中文支持非常不友好，建议在其他编辑器里写好后再粘贴进来查看语法是否错误 同样通过docker安装
+docker pull swaggerapi/swagger-editor docker run -d -p 80:8080 swaggerapi/swagger-editor ###swagger-codegen swagger-codegen工具是可以通过编辑好的api(yaml文件)文档直接生成各种后端的代码。现在支持的语言有:
+ C# (ASP.NET Core, NancyFx), C++ (Pistache, Restbed), Erlang, Go, Haskell (Servant), Java (MSF4J, Spring, Undertow, JAX-RS: CDI, CXF, Inflector, RestEasy, Play Framework, PKMST), Kotlin, PHP (Lumen, Slim, Silex, Symfony, Zend Expressive), Python (Flask), NodeJS, Ruby (Sinatra, Rails5), Rust (rust-server), Scala (Finch, Lagom, Scalatra) ###本文将通过openapi3规范编写api文档: ####OpenAPI规范]]></summary>
+            
+                <content type="html"><![CDATA[<p>swagger是一个款强大的API文档生成工具集，他分为swagger-ui，swagger-codegen，swagger-editor。通过这三个工具我们可以编写非常完善Restful API文档。</p>
+<p>####swagger-ui
+swagger-ui顾名思义这个工具就是用来显示编写好的api文档，这个工具通过解析编写好的json文档显示一个web页面。
+<img src="http://7u2kla.com1.z0.glb.clouddn.com/15213791666907.jpg" alt=""></p>
+<p>通过docker安装</p>
+<pre><code>docker pull swaggerapi/swagger-ui
+docker run -p 80:8080 swaggerapi/swagger-ui
+</code></pre><p>###swagger-editor
+swagger-editor是一个编辑器，可以实时预览修改结果,不过这编辑器对中文支持非常不友好，建议在其他编辑器里写好后再粘贴进来查看语法是否错误
+<img src="http://7u2kla.com1.z0.glb.clouddn.com/15213793329758.jpg" alt=""></p>
+<p>同样通过docker安装</p>
+<pre><code>docker pull swaggerapi/swagger-editor
+docker run -d -p 80:8080 swaggerapi/swagger-editor
+</code></pre><p>###swagger-codegen
+swagger-codegen工具是可以通过编辑好的api(yaml文件)文档直接生成各种后端的代码。现在支持的语言有:</p>
+<pre><code> C# (ASP.NET Core, NancyFx), C++ (Pistache, 
+ Restbed), Erlang, Go, Haskell (Servant), Java 
+ (MSF4J, Spring, Undertow, JAX-RS: CDI, CXF, 
+ Inflector, RestEasy, Play Framework, PKMST), 
+ Kotlin, PHP (Lumen, Slim, Silex, Symfony, Zend 
+ Expressive), Python (Flask), NodeJS, Ruby 
+ (Sinatra, Rails5), Rust (rust-server), Scala 
+ (Finch, Lagom, Scalatra)
+</code></pre><p>###本文将通过openapi3规范编写api文档:
+####OpenAPI规范</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Golang 通过Gitlab持续集成/持续部署（CI/CD</title>
+            <link rel="alternate" type="text/html" href="http://lt7.top/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/" />
+            <id>http://lt7.top/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</id>
+            <updated>2021-04-12T05:03:17+08:00</updated>
+            <published>2018-03-16T14:52:41+08:00</published>
+            <author>
+                    <name>lintao</name>
+                    <uri>https://lintao.wiki/</uri>
+                    <email>mrqter@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[gitlab自带的CI工具可以非常简单的实现持续集成和持续部署，无需繁琐的安装。 工作流程: 将代码提交到gitlab-&gt;gitlab进入CI工作流-&gt;GitLab-Runner从gitlab代码服务器拉下最新代码，根据.gitlab-ci.yml执行PIPELINE, 安装GitLab-Runner: https://docs.gitlab.com/runner/#install-gitlab-runner
+将这个Runner注册到你运行的Gitlab实例上,这样你的代码每次发生变化Gitlab就会通知这个Runner来执行CI流程，打开项目的Settings-&gt;CI/CD-&gt;Runners settings,找到Specific Runners下面的Gitlab服务器地址和Token https://docs.gitlab.com/runner/#install-gitlab-runner 运行以下命令执行注册
+sudo gitlab-runner register 输入你的GitLab实例URL：
+Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com ) xxx 输入您获得的注册Runner的token：
+Please enter the gitlab-ci token for this runner xxx 输入Runner的描述，你可以稍后在GitLab的用户界面中进行更改：
+Please enter the gitlab-ci description for this runner my-runner 输入与Runner关联的标签，稍后可以在GitLab的用户界面中进行更改：
+Please enter the gitlab-ci tags for this runner (comma separated): go 选择Runner是否应该选择没有标签的作业，以后可以在GitLab的用户界面中更改它（默认为false）：]]></summary>
+            
+                <content type="html"><![CDATA[<p>gitlab自带的CI工具可以非常简单的实现持续集成和持续部署，无需繁琐的安装。
+工作流程:
+将代码提交到gitlab-&gt;gitlab进入CI工作流-&gt;GitLab-Runner从gitlab代码服务器拉下最新代码，根据.gitlab-ci.yml执行PIPELINE,
+<img src="media/15211786315251.png" alt=""></p>
+<h1 id="安装gitlab-runner">安装GitLab-Runner:</h1>
+<p><a href="https://docs.gitlab.com/runner/#install-gitlab-runner">https://docs.gitlab.com/runner/#install-gitlab-runner</a></p>
+<p>将这个Runner注册到你运行的Gitlab实例上,这样你的代码每次发生变化Gitlab就会通知这个Runner来执行CI流程，打开项目的Settings-&gt;CI/CD-&gt;Runners settings,找到Specific Runners下面的Gitlab服务器地址和Token
+<img src="media/15211798850111.jpg" alt=""></p>
+<p><a href="https://docs.gitlab.com/runner/#install-gitlab-runner">https://docs.gitlab.com/runner/#install-gitlab-runner</a>
+运行以下命令执行注册</p>
+<pre><code>sudo gitlab-runner register
+</code></pre><p>输入你的GitLab实例URL：</p>
+<pre><code>Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )
+xxx
+</code></pre><p>输入您获得的注册Runner的token：</p>
+<pre><code>Please enter the gitlab-ci token for this runner
+xxx
+</code></pre><p>输入Runner的描述，你可以稍后在GitLab的用户界面中进行更改：</p>
+<pre><code>Please enter the gitlab-ci description for this runner
+my-runner
+</code></pre><p>输入与Runner关联的标签，稍后可以在GitLab的用户界面中进行更改：</p>
+<pre><code>Please enter the gitlab-ci tags for this runner (comma separated):
+go
+</code></pre><p>选择Runner是否应该选择没有标签的作业，以后可以在GitLab的用户界面中更改它（默认为false）：</p>
+<pre><code>Whether to run untagged jobs [true/false]:
+true
+</code></pre><p>选择是否将Runner锁定到当前项目，您可以稍后在GitLab的用户界面中进行更改。Runner特定时有用（默认为true）：</p>
+<pre><code>Whether to lock Runner to current project [true/false]:
+true
+</code></pre><p>输入Runner执行者：
+如果您选择Docker作为您的执行程序，则会要求您为默认图像用于未在其中定义一个的项目.gitlab-ci.yml</p>
+<pre><code>Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, shell:
+docker
+</code></pre><p>编辑.gitlab-ci.yml文件, 这里使用docker运行环境，省去了构建编译环境的麻烦。</p>
+<pre><code>image: golang:latest
+
+variables:
+  REPO_NAME: project
+
+before_script:
+  - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
+  - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
+  - cd $GOPATH/src/$REPO_NAME
+</code></pre><p><code>image: golang:latest</code>这里告诉Runner将代码运行在哪个容器内运行。<code>variables: REPO_NAME: project</code> 配置变量，跟shell里的变量是一个意思。<code>before_script</code>在执行所有步骤之前执行的一段脚本。这里我们在go/src/目录下根据项目名称创建了一个文件夹，然后从$CI_PROJECT_DIR环境变量获取到代码现在存在的目录，将目录建立一个软链接链接到刚刚创建的go/src/project目录。这样我们就完成了go编译环境的搭建，</p>
+<pre><code>stages:
+    - test
+    - build
+    - deploy
+</code></pre><p>stages 用于定义执行步骤，每个步骤可以在job中使用。stages的排序定义了Job执行的顺序：
+根据上面定义。首先所有被定义为test的job会并行执行，如果所有的test都执行成功了然后就会执行所有定义为build的job.如果任何先前的Job失败，则提交被标记为failed并且不执行下一步</p>
+<pre><code>test:
+    stage: test
+    script:
+      - cd tests
+      - go test -v
+
+compile:
+  stage: build
+  script:
+    - go build -o $CI_PROJECT_DIR/demo
+  artifacts:
+    paths:
+      - demo
+ 
+ deploy_develop:
+  stage: deploy
+  script:
+    - echo &quot;$SSH_PRIVATE_KEY&quot; &gt;&gt; ~/.ssh/id_dsa
+    - chmod 600 ~/.ssh/id_dsa
+    - echo -e &quot;Host *\n\tStrictHostKeyChecking no\n\n&quot; &gt; ~/.ssh/config
+    - rsync $CI_PROJECT_DIR/demo root@xxxx:/root/program
+    - ssh root@xxxx &quot;/usr/bin/supervisorctl restart demo&quot;
+  only:
+    - develop
+ 
+deploy_production:
+  stage: deploy
+  script:
+    - echo &quot;$SSH_PRIVATE_KEY&quot; &gt;&gt; ~/.ssh/id_dsa
+    - chmod 600 ~/.ssh/id_dsa
+    - echo -e &quot;Host *\n\tStrictHostKeyChecking no\n\n&quot; &gt; ~/.ssh/config
+    - rsync $CI_PROJECT_DIR/demo root@xxxx:/root/program
+    - ssh root@xxxx &quot;/usr/bin/supervisorctl restart demo&quot;
+  only:
+    - master
+</code></pre><p>这里定义了4个job分别是test,compile,deploy_production,deploy_develop,首先我们执行测试，测试成功后编译出一个可执行文件，然后根据不同的提交分支发布到不同的服务器上部署</p>
+<p>fatal: repository &lsquo;http://gitlab-ci-token:xxxxxxxxxxxxxxxxxxxx@192.168.15.95/lintao/work-doc.git/&rsquo; not found
+错误处理
+vim /etc/gitlab-runner/config.toml
+clone_url = &ldquo;http://192.168.15.95:8080/&rdquo;</p>
+<p>FROM golang:latest</p>
+<p>RUN apt-get update -y &amp;&amp; apt-get install openssh-client -y &amp;&amp; apt-get update -y &amp;&amp; apt-get install rsync -y &amp;&amp; mkdir -p ~/.ssh</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Mac安装Gitlab</title>
+            <link rel="alternate" type="text/html" href="http://lt7.top/posts/mac%E5%AE%89%E8%A3%85gitlab/" />
+            <id>http://lt7.top/posts/mac%E5%AE%89%E8%A3%85gitlab/</id>
+            <updated>2021-04-12T05:03:17+08:00</updated>
+            <published>2018-02-22T22:53:00+08:00</published>
+            <author>
+                    <name>lintao</name>
+                    <uri>https://lintao.wiki/</uri>
+                    <email>mrqter@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[安装环境: Docker Gitlab中文镜像 4GB内存
+Docker安装:
+Mac版本下载地址 https://store.docker.com/editions/community/docker-ce-desktop-mac
+下载完docker后添加Daocloud加速器 http://www.daocloud.io/mirror#accelerator-doc
+下载中文版Gitlab镜像
+docker pull twang2218/gitlab-ce-zh 启动容器:
+docker run -d \ --hostname gitlab.example.com \ -p 80:80 \ -p 443:443 \ -p 22:22 \ --name gitlab \ --restart unless-stopped \ -v gitlab-config:/etc/gitlab \ -v gitlab-logs:/var/log/gitlab \ -v gitlab-data:/var/opt/gitlab \ --network gitlab-net \ twang2218/gitlab-ce-zh:10.4.3 进入容器修改配置
+docker exec -it gitlab bash vi /etc/gitlab/gitlab.]]></summary>
+            
+                <content type="html"><![CDATA[<p>安装环境:
+Docker
+<a href="https://hub.docker.com/r/twang2218/gitlab-ce-zh/">Gitlab中文镜像</a>
+4GB内存</p>
+<p>Docker安装:</p>
+<p>Mac版本下载地址
+<a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">https://store.docker.com/editions/community/docker-ce-desktop-mac</a></p>
+<p>下载完docker后添加Daocloud加速器
+<a href="http://www.daocloud.io/mirror#accelerator-doc">http://www.daocloud.io/mirror#accelerator-doc</a></p>
+<p><img src="http://7u2kla.com1.z0.glb.clouddn.com/%E5%8A%A0%E9%80%9F%E5%99%A8_DaoCloud_-_%E4%B8%9A%E7%95%8C%E9%A2%86%E5%85%88%E7%9A%84%E5%AE%B9%E5%99%A8%E4%BA%91%E5%B9%B3%E5%8F%B0.png" alt="加速器_DaoCloud_-_业界领先的容器云平台"></p>
+<p>下载中文版Gitlab镜像</p>
+<pre><code>docker pull twang2218/gitlab-ce-zh
+</code></pre><p>启动容器:</p>
+<pre><code>docker run -d \
+    --hostname gitlab.example.com \
+    -p 80:80 \
+    -p 443:443 \
+    -p 22:22 \
+    --name gitlab \
+    --restart unless-stopped \
+    -v gitlab-config:/etc/gitlab \
+    -v gitlab-logs:/var/log/gitlab \
+    -v gitlab-data:/var/opt/gitlab \
+    --network gitlab-net \
+    twang2218/gitlab-ce-zh:10.4.3
+</code></pre><p>进入容器修改配置</p>
+<pre><code>docker exec -it gitlab bash
+vi /etc/gitlab/gitlab.rb
+</code></pre><p>修改时区</p>
+<pre><code> gitlab_rails['time_zone'] = 'Asia/Shanghai'
+</code></pre><p>配置邮箱:</p>
+<pre><code>### Email Settings
+ gitlab_rails['smtp_enable'] = true
+ gitlab_rails['smtp_address'] = &quot;smtp.qq.com&quot;
+ gitlab_rails['smtp_port'] = 465
+ gitlab_rails['smtp_user_name'] = &quot;xxxx@qq.com&quot;
+ gitlab_rails['smtp_password'] = &quot;xxxx&quot;
+ gitlab_rails['smtp_authentication'] = &quot;login&quot;
+ gitlab_rails['smtp_enable_starttls_auto'] = true
+ gitlab_rails['smtp_tls'] = true
+ gitlab_rails['gitlab_email_from'] = 'xxxx@qq.com'
+</code></pre><p>修改完后更新下配置，<a href="https://docs.gitlab.com/omnibus/settings/smtp.html">更多邮箱配置参考</a></p>
+<pre><code>gitlab-ctl reconfigure
+</code></pre><p>在浏览器打开http://127.0.0.1 首次安装会要几分钟初始化。可能会出现500的情况，初始化完成后就能使用了。
+<img src="http://7u2kla.com1.z0.glb.clouddn.com/%E6%98%9F%E6%A0%87%E9%A1%B9%E7%9B%AE_%C2%B7_%E4%BB%AA%E8%A1%A8%E7%9B%98_%C2%B7_GitLab_%E5%92%8C_2018-02-22_md.png" alt="星标项目_·_仪表盘_·_GitLab_和_2018-02-22_md"></p>
+<p>Gitlab文档
+<a href="https://docs.gitlab.com/omnibus/README.html">https://docs.gitlab.com/omnibus/README.html</a></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">搭建Shadowsocks服务器</title>
+            <link rel="alternate" type="text/html" href="http://lt7.top/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/" />
+            <id>http://lt7.top/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+            <updated>2021-04-12T05:03:17+08:00</updated>
+            <published>2017-11-01T11:56:56+08:00</published>
+            <author>
+                    <name>lintao</name>
+                    <uri>https://lintao.wiki/</uri>
+                    <email>mrqter@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[最近VPN总是掉线连不上，所以决定自己搭建一个Shadowsocks服务器,找了各种教程后发现搭建Shadowsocks服务器非常简单 搭建Shadowsocks需要一个在墙外的服务器。 ###VPS 免费： 亚马逊有免费1年的vps服务器，只需要绑定信用卡就可以了。 付费： https://www.vultr.com https://bandwagonhost.com/cart.php https://bandwagonhost.com https://www.linode.com
+如果对网速有要求只能选香港的vps,看youtube 4K无压力，平时只是用用google推荐使用vultr。创建服务器前最好先测试下网速。
+linode https://www.linode.com/speedtest vultr 打开网页后搜索How can I test Vultr download speeds? https://www.vultr.com/faq/
+###安装GO 首先在官网找到最新二进制版本的连接 https://golang.org/dl/
+####下载二进制包 wget https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz
+####解压到Local目录下
+sudo tar -xzf go1.8.1.linux-amd64.tar.gz -C /usr/local
+####设置环境变量
+vim /etc/profile
+export PATH=$PATH:/usr/local/go/bin export GOPATH=$HOME/work export PATH=$GOPATH/bin:$PATH source /etc/profile
+###安装supervisor apt-get -y install supervisor]]></summary>
+            
+                <content type="html"><![CDATA[<p>最近VPN总是掉线连不上，所以决定自己搭建一个Shadowsocks服务器,找了各种教程后发现搭建Shadowsocks服务器非常简单
+搭建Shadowsocks需要一个在墙外的服务器。
+###VPS
+免费：
+亚马逊有免费1年的vps服务器，只需要绑定信用卡就可以了。
+付费：
+<a href="https://www.vultr.com">https://www.vultr.com</a>
+<a href="https://bandwagonhost.com/cart.php">https://bandwagonhost.com/cart.php</a>
+<a href="https://bandwagonhost.com">https://bandwagonhost.com</a>
+<a href="https://www.linode.com">https://www.linode.com</a></p>
+<p>如果对网速有要求只能选香港的vps,看youtube 4K无压力，平时只是用用google推荐使用vultr。创建服务器前最好先测试下网速。</p>
+<p>linode
+<a href="https://www.linode.com/speedtest">https://www.linode.com/speedtest</a>
+vultr 打开网页后搜索How can I test Vultr download speeds?
+<a href="https://www.vultr.com/faq/">https://www.vultr.com/faq/</a></p>
+<p>###安装GO
+首先在官网找到最新二进制版本的连接
+<a href="https://golang.org/dl/">https://golang.org/dl/</a></p>
+<p>####下载二进制包
+<code>wget https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz</code></p>
+<p>####解压到Local目录下</p>
+<p><code>sudo tar -xzf go1.8.1.linux-amd64.tar.gz -C /usr/local</code></p>
+<p>####设置环境变量</p>
+<p><code>vim /etc/profile</code></p>
+<pre><code>export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/work
+export PATH=$GOPATH/bin:$PATH
+</code></pre><p><code>source /etc/profile</code></p>
+<p>###安装supervisor
+<code>apt-get -y install supervisor</code></p>
+<p><code>vim /etc/supervisor/conf.d/shadowsocks.conf</code></p>
+<pre><code>[program:shadowsocks]
+command=/root/work/bin/shadowsocks-server -c config.json
+directory=/root
+autostart=true
+autorestart=true
+</code></pre><p>###安装Go版本shadowsocks
+<code>go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server</code></p>
+<p>####创建配置文件
+<code>vim config.json</code>
+####参数</p>
+<pre><code>server          vps公网ip
+server_port     服务器端口， 需要在安全组里打开这个端口，不然客户端无法访问
+local_port      本地socks5代理端口
+method          加密方式,下面是所有支持的加密方式:
+                 aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, cast5-cfb, des-cfb, rc4-md5, chacha20, salsa20, rc4,
+password        用于加密传输的密码r
+timeout         超时设置，以秒为单位
+</code></pre><pre><code>{
+  &quot;server&quot;:&quot;xxx.xxx.xxx.xx&quot;,
+  &quot;server_port&quot;:2333,
+  &quot;local_port&quot;:1080,
+  &quot;password&quot;:&quot;123456&quot;,
+  &quot;timeout&quot;:60,
+  &quot;method&quot;:&quot;aes-256-cfb&quot;
+}
+</code></pre><p>Mac os使用
+首先下载客户端,NG是最新版的功能比较多。</p>
+<pre><code>https://sourceforge.net/projects/shadowsocksgui/?source=typ_redirect
+</code></pre><pre><code>https://github.com/shadowsocks/ShadowsocksX-NG/releases/download/v1.6.1/ShadowsocksX-NG.1.6.1.zip
+</code></pre><p>iOS推荐使用Wingy，非常方便的小工具
+<img src="http://7u2kla.com1.z0.glb.clouddn.com/15101075736153.jpg" alt=""></p>
+<p>linux上使用
+先下载客户端程序。然后编辑config文件</p>
+<pre><code>go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-local
+</code></pre><pre><code>{
+    &quot;server&quot;:&quot;xx.xx.xx.xx&quot;, 服务器地址
+    &quot;server_port&quot;:8080, 服务器端口
+    &quot;local_port&quot;:1080, 本地监听的端口
+    &quot;password&quot;:&quot;123456&quot;,
+    &quot;method&quot;: &quot;aes-128-cfb-auth&quot;,
+    &quot;timeout&quot;:600
+}
+</code></pre><p>在后台启动这个服务
+<code>nohup ./shadowsocks-local config.json &amp;</code></p>
+<p>在linux上使用需要浏览器设置好代理方式。以firefox为例;
+先安装AutoProxy-ng插件
+<img src="http://7u2kla.com1.z0.glb.clouddn.com/15101081468737.jpg" alt=""></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Mysql配置主从同步</title>
+            <link rel="alternate" type="text/html" href="http://lt7.top/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" />
+            <id>http://lt7.top/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</id>
+            <updated>2021-04-12T05:03:17+08:00</updated>
+            <published>2017-11-01T10:07:29+08:00</published>
+            <author>
+                    <name>lintao</name>
+                    <uri>https://lintao.wiki/</uri>
+                    <email>mrqter@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[参考 Mysql官方文档
+##主机配置:
+修改My.conf
+server-id = 1 主机Id log_bin = mast-binlog binlog存放位置 log-bin-index = master-binlog.index 存放binlog索引 expire_logs_days = 10 binlog过期时间 max_binlog_size = 200M binlog文件大小 binlog_do_db = database binlog只对那些库启用
+确保skip-networking主服务器上未启用该选项。如果网络被禁用，则从机不能与主机通信，并且复制失败。 确保bind-address主机上没有启用改选项或者修改成0.0.0.0
+log_bin和log-bin-index可以自定义存储目录。修改默认存储路径时需要修改mysql的访问权限。
+vim /etc/apparmor.d/usr.sbin.mysqld 配置好My.conf和apparmor后需要重启配置才能生效
+在主机上创建一个用户给从机连接
+CREATE USER 'slave_mysql'@'%' IDENTIFIED BY 'mmp123'; GRANT REPLICATION SLAVE ON *.* TO 'slave_mysql'@'%'; 创建完用户有刷新权限 flush privileges;
+锁住数据库用mysqldump将这个数据库备份发给从机，配置好从机再解锁]]></summary>
+            
+                <content type="html"><![CDATA[<p>参考
+<a href="https://dev.mysql.com/doc/refman/5.7/en/replication.html">Mysql官方文档</a></p>
+<p>##主机配置:</p>
+<p><strong>修改My.conf</strong></p>
+<p><code>server-id              = 1</code>
+主机Id
+<code>log_bin           		= mast-binlog</code>
+binlog存放位置
+<code>log-bin-index           = master-binlog.index</code>
+存放binlog索引
+<code>expire_logs_days       = 10</code>
+binlog过期时间
+<code>max_binlog_size        = 200M</code>
+binlog文件大小
+<code>binlog_do_db           = database</code>
+binlog只对那些库启用</p>
+<p>确保skip-networking主服务器上未启用该选项。如果网络被禁用，则从机不能与主机通信，并且复制失败。
+确保bind-address主机上没有启用改选项或者修改成0.0.0.0</p>
+<p>log_bin和log-bin-index可以自定义存储目录。修改默认存储路径时需要修改mysql的访问权限。</p>
+<pre><code>vim /etc/apparmor.d/usr.sbin.mysqld
+</code></pre><p>配置好My.conf和apparmor后需要重启配置才能生效</p>
+<p>在主机上创建一个用户给从机连接</p>
+<pre><code>CREATE USER 'slave_mysql'@'%' IDENTIFIED BY 'mmp123';
+GRANT REPLICATION SLAVE ON *.* TO 'slave_mysql'@'%';
+</code></pre><p>创建完用户有刷新权限
+<code>flush privileges;</code></p>
+<p>锁住数据库用mysqldump将这个数据库备份发给从机，配置好从机再解锁</p>
+<pre><code>FLUSH TABLES WITH READ LOCK;
+UNLOCK TABLES;
+</code></pre><p>查看主机当前在用哪个binlog文件写入和写入位置</p>
+<p><code>SHOW MASTER STATUS;</code></p>
+<pre><code>File                   postion   Binglog-Do-DB
+master-bin.00001    	004       database
+</code></pre><p>从机配置</p>
+<p><strong>修改My.conf</strong></p>
+<pre><code>
+```server-id = 2```
+从机ID不能和主机一样
+```replicate-do-db=database```
+需要备份那些库
+```relay_log    = server-relay-bin```
+中继日志存放位置。从机从主机获取数据后先会放入中继日志，然后从中继中读取sql语句。
+
+配置好my.conf后重启从机，然后在从机配置主机信息
+
+</code></pre><p><a href="https://dev.mysql.com/doc/refman/5.7/en/change-master-to.html">CHANGE MASTER TO 完整语法介绍</a></p>
+<p>从机配置
+<a href="https://mysql.az/2015/04/12/change-binary-log-and-relay-log-location-to-home/">https://mysql.az/2015/04/12/change-binary-log-and-relay-log-location-to-home/</a></p>
+<p>查看Binlog
+binlog无法查看解决办法
+mysqlbinlog: [ERROR] unknown variable &lsquo;default-character-set=utf8&rsquo;
+mysqlbinlog &ndash;no-defaults &ndash;set-charset=utf8 master-bin.080541
+查看Row模式下的binlog
+mysqlbinlog  &ndash;no-defaults &ndash;set-charset=utf8 -v &ndash;base64-output=DECODE-ROWS master-bin.080541</p>
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/mysqlbinlog-row-events.html">https://dev.mysql.com/doc/refman/5.7/en/mysqlbinlog-row-events.html</a></p>
+<p>创建过滤规则
+CHANGE REPLICATION FILTER filter[, filter][, &hellip;]</p>
+<p>filter:
+REPLICATE_DO_DB = (db_list)
+| REPLICATE_IGNORE_DB = (db_list)
+| REPLICATE_DO_TABLE = (tbl_list)
+| REPLICATE_IGNORE_TABLE = (tbl_list)
+| REPLICATE_WILD_DO_TABLE = (wild_tbl_list)
+| REPLICATE_WILD_IGNORE_TABLE = (wild_tbl_list)
+| REPLICATE_REWRITE_DB = (db_pair_list)</p>
+<p>CHANGE REPLICATION FILTER
+REPLICATE_IGNORE_TABLE = ()</p>
+<p>db_list:
+db_name[, db_name][, &hellip;]</p>
+<p>tbl_list:
+db_name.table_name[, db_table_name][, &hellip;]
+wild_tbl_list:
+&lsquo;db_pattern.table_pattern&rsquo;[, &lsquo;db_pattern.table_pattern&rsquo;][, &hellip;]</p>
+<p>db_pair_list:
+(db_pair)[, (db_pair)][, &hellip;]</p>
+<p>db_pair:
+from_db, to_db</p>
+<pre><code>CHANGE REPLICATION FILTER
+</code></pre>
+<p>REPLICATE_WILD_IGNORE_TABLE = (&lsquo;db1.new%&rsquo;, &lsquo;db2.new%');</p>
+<p>日志清理
+PURGE MASTER LOGS BEFORE DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)
+<a href="http://www.ttlsa.com/mysql/mysql-5-7-enhanced-multi-thread-salve/">http://www.ttlsa.com/mysql/mysql-5-7-enhanced-multi-thread-salve/</a>
+从机开启多线程
+STOP SLAVE;
+SET GLOBAL master_info_repository = &lsquo;TABLE&rsquo;
+SET GLOBAL relay_log_info_repository = &lsquo;TABLE&rsquo;
+SET GLOBAL relay_log_recovery =
+SET GLOBAL slave_parallel_type=LOGICAL_CLOCK;
+<br>
+START slave</p>
+<p><a href="https://www.percona.com/blog/2013/02/08/how-to-createrestore-a-slave-using-gtid-replication-in-mysql-5-6/">https://www.percona.com/blog/2013/02/08/how-to-createrestore-a-slave-using-gtid-replication-in-mysql-5-6/</a></p>
+<p>同步出错解决方案
+The slave is connecting using CHANGE MASTER TO MASTER_AUTO_POSITION = 1, but the master has purged binary logs containing GTIDs that the slave requires.</p>
+<p>这个是由于在主库上执行过purge binary logs，然后当从库change master的时候，却要执行那些事务。
+你可以在主库上先查找哪些gtid被purge了。
+show global variables like &lsquo;gtid_purged&rsquo;;
+然后拿着这个value，去从库上依次
+stop slave;
+set global gtid_purged = &lsquo;xxx&rsquo;; # xxx是你主库上查到的value。
+start slave;
+这样能跳过执行被主库已经purge的事务了。
+如果出现
+@@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_EXECUTED is empty.
+reset master后在执行</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+</feed>
