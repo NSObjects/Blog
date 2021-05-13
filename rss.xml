@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Gopher</title><link>http://lt7.top/</link><description>Gopher</description><generator>Hugo 0.83.1 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>mrqter@gmail.com (lintao)</managingEditor><webMaster>mrqter@gmail.com (lintao)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 13 May 2021 13:08:35 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="http://lt7.top/rss.xml"/><item><title>OpenApi2.0</title><link>http://lt7.top/posts/openapi2.0/</link><guid isPermaLink="true">http://lt7.top/posts/openapi2.0/</guid><pubDate>Tue, 27 Mar 2018 21:45:57 +0800</pubDate><author>mrqter@gmail.com (lintao)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;h2 id="什么是openapi规范">什么是OpenApi规范？&lt;/h2>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Gopher</title><link>http://lt7.top/</link><description>Gopher</description><generator>Hugo 0.83.1 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>mrqter@gmail.com (lintao)</managingEditor><webMaster>mrqter@gmail.com (lintao)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 13 May 2021 13:11:48 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="http://lt7.top/rss.xml"/><item><title>使用pprof解决内存泄露</title><link>http://lt7.top/posts/%E4%BD%BF%E7%94%A8pprof%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/</link><guid isPermaLink="true">http://lt7.top/posts/%E4%BD%BF%E7%94%A8pprof%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/</guid><pubDate>Thu, 13 May 2021 20:21:21 +0800</pubDate><author>mrqter@gmail.com (lintao)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在公司项目中使用go-micro作为微服务框架，但是随着服务越来越多线上监控发现内存在不断上涨，后来使用pprof定位到具体原因并修复，本文介绍我是如何通过pprof一步一步找出这个问题
+&lt;img src="http://lt7.top/static/images/pleak.png" alt="">&lt;/p>
+&lt;h2 id="pprof是什么">pprof是什么？&lt;/h2>
+&lt;blockquote>
+&lt;p>pprof is a tool for visualization and analysis of profiling data.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>pprof reads a collection of samples in profile.proto format and generates reports to visualize and help analyze the data. It can generate both text and graphical reports (through the use of the dot visualization package).&lt;/p>
+&lt;/blockquote>
+&lt;p>pprof是用于可视化和分析性能分析数据的工具，可以通过收集到的采样数据生成文本或者图形报告
+![]c&lt;/p>
+&lt;h2 id="开启pprof">开启pprof&lt;/h2>
+&lt;p>在main包导入pprof就可以开启pprof，如果使用gin,echo可以到github查找对应的插件&lt;/p>
+&lt;pre>&lt;code>_ &amp;quot;net/http/pprof&amp;quot;
+&lt;/code>&lt;/pre></description></item><item><title>OpenApi2.0</title><link>http://lt7.top/posts/openapi2.0/</link><guid isPermaLink="true">http://lt7.top/posts/openapi2.0/</guid><pubDate>Tue, 27 Mar 2018 21:45:57 +0800</pubDate><author>mrqter@gmail.com (lintao)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;h2 id="什么是openapi规范">什么是OpenApi规范？&lt;/h2>
 &lt;p>OpenApi规范是一套用语描述REST API的描述格式，分为以下几&lt;/p>
 &lt;pre>&lt;code class="language-language" data-lang="language">func main() {
 var a = 2
