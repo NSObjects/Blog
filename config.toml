@@ -2,7 +2,7 @@
 # 站点配置
 
 baseURL = "http://lt7.top/"
-title = "Hugo 主题 MemE"
+title = "Gopher"
 languageCode = "zh-CN"
 hasCJKLanguage = true
 # 版权信息（支持 Markdown）
@@ -102,7 +102,7 @@ uglyURLs = false
     # 网站（默认值：baseURL）
     website = "https://lt7.top/"
     # 推特
-    twitter = "stay722"
+    twitter = "servenstay"
 
 # 相关文章
 [related]
@@ -302,9 +302,9 @@ uglyURLs = false
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
-    homePoetry = []
+    homePoetry = ["井底点灯深烛伊","共郎长行莫围棋","玲珑骰子安红豆","入骨相思知不知"]
     # 底部链接的内间距，单位：em
-    homeLinksPadding = 1
+    homeLinksPadding = 3
 
     ## 「视频片段」
     homePoster = ""
@@ -323,11 +323,11 @@ uglyURLs = false
     # 站点信息
 
     # 站点的 LOGO
-    siteLogo = "/icons/apple-touch-icon.png"
+    siteLogo = "/icons/apple-touch-icon.png.jpeg"
     # 说明：用于 JSON-LD、Open Graph
 
     # 站点的描述
-    siteDescription = "MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。"
+    siteDescription = "Gopher"
     # 说明：用于 HTML 的头部元数据、JSON-LD、
     #      Open Graph、Atom、RSS
 
@@ -336,7 +336,7 @@ uglyURLs = false
     # 注意：请保持此格式，更改数字
 
     # 站点的推特帐号
-    siteTwitter = "reuixiy"
+    siteTwitter = "servenstay"
     # 说明：用于 Twitter Cards
 
 
@@ -584,15 +584,15 @@ uglyURLs = false
     # 说明：仅在生产环境（production）下渲染
 
     # 是否开启（全局设置）
-    enableComments = false
+    enableComments = true
     # 说明：文章的 Front Matter 中的 `comments`
     #      的优先级高于此处
 
     # 直接加载评论，不需要手动点击按钮加载
-    autoLoadComments = false
+    autoLoadComments = true
 
     ## Disqus
-    enableDisqus = false
+    enableDisqus = true
     disqusShortname = ""
 
     ## Valine
@@ -700,7 +700,7 @@ uglyURLs = false
     # 注意：只支持 HSL 颜色值
 
     # 文章的内容宽度
-    postWidth = 36
+    postWidth = 80
     # 说明：如果留空（""），则用 42 作为默认值
     #      单位：em
 
@@ -1064,7 +1064,7 @@ uglyURLs = false
     #      的优先级高于此处
 
     # 仓库地址
-    repoURL = ""
+    repoURL = "https://github.com/nsobjects"
     # 编辑地址
     repoEditURL = ""
 

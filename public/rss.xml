@@ -7,12 +7,12 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Gopher</title>
-        <link>https://nsobjects.github.io/</link>
-        <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
+        <title>Hugo 主题 MemE</title>
+        <link>http://lt7.top/</link>
+        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
         <generator>Hugo 0.82.0 https://gohugo.io/</generator>
         
-            <language>en</language>
+            <language>zh-CN</language>
         
         
             <managingEditor>mrqter@gmail.com (lintao)</managingEditor>
@@ -21,41 +21,724 @@
             <webMaster>mrqter@gmail.com (lintao)</webMaster>
         
         
-            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 13 May 2021 10:26:01 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 13 May 2021 14:14:17 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss+xml" href="https://nsobjects.github.io/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="http://lt7.top/rss.xml" />
         
         
             <item>
-                <title>OpenApi2.0</title>
-                <link>https://nsobjects.github.io/posts/openapi2.0/</link>
-                <guid isPermaLink="true">https://nsobjects.github.io/posts/openapi2.0/</guid>
-                <pubDate>Tue, 27 Mar 2018 21:45:57 +0800</pubDate>
+                <title>OpenApi3.0</title>
+                <link>http://lt7.top/posts/openapi3.0/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/openapi3.0/</guid>
+                <pubDate>Tue, 27 Mar 2018 21:46:00 &#43;0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<h2 id="什么是openapi规范">什么是OpenApi规范？</h2>
-<p>OpenApi规范是一套用语描述REST API的描述格式，分为以下几</p>
-<pre><code class="language-language" data-lang="language">func main() {
+                    <description>&lt;p&gt;OpenAPI3.0是OpenApi规范的最新版本,&lt;a href=&#34;https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md&#34;&gt;openapi3完整语法参考&lt;/a&gt;,现在大多数应用只支持2.0规范，可以在这里查看2.0&lt;/p&gt;
+&lt;h3 id=&#34;文档结构&#34;&gt;文档结构&lt;/h3&gt;
+&lt;p&gt;整个Openapi文档由下列字段组成，openapi,info,paths对象想都是必选，其他字段都是可选。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;openapi&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;描述openapi使用的版本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;info&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Info Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;文档信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;servers&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Server Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;用于描述接口地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paths&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Paths Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;api的路径描述&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;components&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Components Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;定义模型，对象重用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;security&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Security Requirement]&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tags&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Tag Object]&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;定义标签，可以将不同路径下同一标签的api集合显示&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;externalDocs&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;External Documentation Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;外部文档&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;定义文档信息&#34;&gt;定义文档信息&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;openapi: 3.0.0
+info:
+  description: 文档描述支持部分markdown语法，例如
+   ![百度](http://www.baidu.com) 
+  version: &amp;quot;1.0.0&amp;quot;
+  title: OpenApi 3.0
+  termsOfService: &#39;http://swagger.io/terms/&#39;
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: &#39;http://www.apache.org/licenses/LICENSE-2.0.html
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####OpenAPI规范的版本号
+在2.0我们使用&lt;code&gt;swagger: &amp;quot;2.0&amp;quot;&lt;/code&gt;描述API文档所使用的OpenApi版本，在3.0之后将改为&lt;code&gt;openapi: 3.0.0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####API描述信息
+&lt;code&gt;info&lt;/code&gt;对象用于描述文档当信息。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文档标题，必填字段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文档描述，这个字段支持CommonMark语法&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;termsOfService&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;API的服务条款的网址。 必须采用URL格式。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;contact&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Contact Object&lt;/td&gt;
+&lt;td&gt;文档作者的联系方式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;license&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;License Object&lt;/td&gt;
+&lt;td&gt;API的许可证信息。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;version&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文档版本，必填字段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;Contact&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;联系人名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;联系人网址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;联系人的邮件地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;license&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;必填字段，许可名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;用于该API的许可证的URL。 必须采用URL格式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;定义服务器地址&#34;&gt;定义服务器地址&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;servers&lt;/code&gt;关键词是3.0新增特性，通过servers关键词我们可以定义多个服务器地址方便切换测试环境和生成环境&lt;a href=&#34;https://swagger.io/docs/specification/api-host-and-base-path/&#34;&gt;更多参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15222430425205.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;servers:
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.example.com
+    description: Optional server description, e.g. Internal staging server for testing
+        
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;定义api路径&#34;&gt;定义API路径&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field Name&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$ref&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;summary&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;get&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;put&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;post&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;delete&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;options&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;head&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;patch&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;trace&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;servers&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Server Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parameters&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Parameter Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field Name&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;tags&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;[&lt;code&gt;string&lt;/code&gt;]&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;summary&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;externalDocs&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;[External Documentation Object]&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;operationId&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parameters&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Parameter Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;requestBody&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Request Body Object&lt;/td&gt;
+&lt;td&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;responses&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Responses Object&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;REQUIRED&lt;/strong&gt;. callbacks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;deprecated&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;boolean&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;security&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Security Requirement Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;servers&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Server Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;paths对象用于定义api中的各个路径，一份openap文档必须有一个paths对象，最简单的例子如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+      tags:
+        - user
+      summary: get user list
+      operationId: getUsers
+      parameters: 
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: offset 
+          required: true
+          schema:
+            type: string
+      responses:
+        &#39;200&#39;:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: &#39;#/components/schemas/User&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;paths&lt;/code&gt;中每个路径以/开头，路径必须有一&lt;code&gt;responses&lt;/code&gt;属性。在同一路径下不同操作定义如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /users:
+    get:
+      tags:
+        - user
+      responses:
+        &#39;200&#39;:
+    post: 
+      tags:
+        - user
+      responses:
+        &#39;200&#39;:
+    delete: 
+       tags:
+        - user
+      responses:
+        &#39;200&#39;:
+    put: 
+      tags:
+        - user  
+      responses:
+        &#39;200&#39;:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在2.0我们可以用&lt;code&gt;Consumes, Produces&lt;/code&gt;来定义请求或者响应的数据格式，在3.0中我们统一使用关键字&lt;code&gt;content&lt;/code&gt;定义数据格式&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/user:
+    post:
+      tags:
+        - user
+      summary: Create user
+      description:
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: &#39;#/components/schemas/User&#39;
+        description: Created user object
+        required: true
+      responses:
+        &#39;200&#39;:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: &#39;#/components/schemas/User&#39;
+      
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;components&lt;/code&gt;对象替换掉2.0中的&lt;code&gt;definitions&lt;/code&gt;，并规范了对象的重用。&lt;/p&gt;
+&lt;p&gt;####路径&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;paths定义了API中的各个路径,以及这些路径的HTTP方法。 例如，GET /user 可以描述为：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+  /user/{id}:
+    put:
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;在同一路径下不同的操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;正确方式&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+    put:
+    post:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;错误方式&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+  /users:
+    post:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####请求参数
+请求参数可以通过拼接路径/users/{userId}，查询字符串(/users?role=admin),将参数放到请求头X-CustomHeader: Value，你可以定义参数数据类型，格式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;拼接路径参数 &lt;code&gt;GET /users/2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /user/{userId}:
+    get:
+      summary: Returns a user by ID.
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: Parameter description in CommonMark or HTML.
+          schema:
+            type : integer
+            format: int64
+            minimum: 1
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;查询参数 &lt;code&gt;GET /users?role=value&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+      parameters:
+        - in: query
+          name: role
+          schema:
+            type: string
+            enum: [user, poweruser, admin]
+          required: true
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;将请求参数放到请求头&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /user:
+    get:
+      summary: Checks if the server is alive
+      parameters:
+        - in: header
+          name: X-Request-ID
+          schema:
+            type: string
+            format: uuid
+          required: true
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;将请求参数放到request body，可以通过关键字requestBody来描述body的内容,在content关键词下定义Media Type&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;application/json
+application/xml
+application/x-www-form-urlencoded
+multipart/form-data
+text/plain; charset=utf-8
+text/html
+application/pdf
+image/png
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;/user:
+  post:
+    summary: 创建一个用户
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;文件上传&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;/file:
+  post:
+      summary: 文件上传.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                fileName:
+                  type: integer
+                file:
+                  type: string
+                  format: binary
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####返回值&lt;/p&gt;
+&lt;p&gt;API规范需要指定所有API操作的Responses。 每个操作必须至少定义一个Responses，通常是成功的Responses。 Responses由其HTTP状态代码和Responses正文和/或标题中返回的数据定义。
+这是一个最简单的例子:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /ping:
+    get:
+      responses:
+        &#39;200&#39;:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: pong
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;API可以用各种数据类型(json/xml)进行响应。 JSON是数据交换中最常用的格式，但不是唯一可能的格式。&lt;/p&gt;
+&lt;p&gt;要指定Response的数据类型，在content关键字下说明。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+      summary: Get all users
+      responses:
+        &#39;200&#39;:
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                $ref: &#39;#/components/schemas/ArrayOfUsers&#39;
+            application/xml:
+              schema:
+                $ref: &#39;#/components/schemas/ArrayOfUsers&#39;
+            text/plain:
+              schema:
+                type: string
+
+  # This operation returns image
+  /logo:
+    get:
+      summary: Get the logo image
+      responses:
+        &#39;200&#39;:
+          description: Logo image in PNG format
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####HTTP Status Codes
+在Response下，每个Response定义以状态码（例如200或404）开始。操作通常会返回一个成功的状态码和一个或多个错误状态。 要定义一系列Response代码，您可以使用以下范围定义：1XX，2XX，3XX，4XX和5XX。 如果使用显式代码定义响应范围，则显式代码定义优先于该代码的范围定义。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;responses:
+        &#39;200&#39;:
+          description: OK
+        &#39;400&#39;:
+          description: Bad request. User ID must be an integer and larger than 0.
+        &#39;401&#39;:
+          description: Authorization information is missing or invalid.
+        &#39;404&#39;:
+          description: A user with the specified ID was not found.
+        &#39;5XX&#39;:
+          description: Unexpected error.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####Response Headers&lt;/p&gt;
+&lt;p&gt;来自API的响应可以包含自定义标题，以提供有关API调用结果的附加信息。 例如，限速API可以通过响应标头提供速率限制状态，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;HTTP 1/1 200 OK
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 99
+X-RateLimit-Reset: 2016-10-12T11:00:00Z
+
+{ ... }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;你可以像这样定义响应headers&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /ping:
+    get:
+      summary: Checks if the server is alive.
+      responses:
+        &#39;200&#39;:
+          description: OK
+          headers:
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+              description: Request limit per hour.
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+              description: The number of requests left for the time window.
+            X-RateLimit-Reset:
+              schema:
+                type: string
+                format: date-time
+              description: The UTC date/time at which the current rate limit window resets.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####Response Body
+schema关键字用于描述Response Body，schema可以这样定义：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用一个 object或者 array ,通常用于JSON或者XML&lt;/li&gt;
+&lt;li&gt;原始数据类型，如数字或字符串 - 用于纯文本响应，&lt;/li&gt;
+&lt;li&gt;一个文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;responses:
+        &#39;200&#39;:
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  username:
+                    type: string
+                    description: The user name. 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####重用
+如果多个操作返回相同的响应（状态码和数据），则可以在全局components对象的响应部分中定义它，然后通过$ref在操作级别引用该定义。 这对于具有相同状态代码和响应主体的错误响应非常有用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;responses:
+        &#39;200&#39;:
+          description: A User object
+          content:
+            application/json:
+              schema:
+                $ref: &#39;#/components/schemas/user&#39;
+components:
+  schemas:
+    user:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        password:
+          type: string
+          description: 密码
+        name:
+          type: string
+          description: 用户
+        avator:
+          type: string
+          description: 头像
+          default: xxxx
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;在请求时我们也可以使用定义好的schema:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;post:
+      summary: 创建用户.
+      tags:
+        - 用户
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: &#39;#/components/schemas/user&#39;
+      responses:
+        &#39;200&#39;:
+          description: 操作结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+&lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>OpenApi2.0</title>
+                <link>http://lt7.top/posts/openapi2.0/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/openapi2.0/</guid>
+                <pubDate>Tue, 27 Mar 2018 21:45:57 &#43;0800</pubDate>
+                
+                    <author>mrqter@gmail.com (lintao)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;什么是openapi规范&#34;&gt;什么是OpenApi规范？&lt;/h2&gt;
+&lt;p&gt;OpenApi规范是一套用语描述REST API的描述格式，分为以下几&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-language&#34; data-lang=&#34;language&#34;&gt;func main() {
  var a = 2
 }
  
-</code></pre><ul>
-<li>描述每个路径上的操作 GET POST DELETE</li>
-<li>请求参数和返回值</li>
-<li>认证方法</li>
-<li>联系信息，许可证，使用条款和其他信息</li>
-</ul>
-<p>API规范可以用YAML或JSON编写。该格式对人和机器都很容易学习和阅读。</p>
-<p>OpenApi当前版本是3.0，本文将描述OpenApi2.0规范
-可以在这里查看完整规范https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md</p>
-<p>本文将用一个YAML格式的例子向你描述如何编写OpenApi2.0文档</p>
-<h3 id="文档信息描述">文档信息描述</h3>
-<pre><code>swagger: &quot;2.0&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;描述每个路径上的操作 GET POST DELETE&lt;/li&gt;
+&lt;li&gt;请求参数和返回值&lt;/li&gt;
+&lt;li&gt;认证方法&lt;/li&gt;
+&lt;li&gt;联系信息，许可证，使用条款和其他信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;API规范可以用YAML或JSON编写。该格式对人和机器都很容易学习和阅读。&lt;/p&gt;
+&lt;p&gt;OpenApi当前版本是3.0，本文将描述OpenApi2.0规范
+可以在这里查看完整规范https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md&lt;/p&gt;
+&lt;p&gt;本文将用一个YAML格式的例子向你描述如何编写OpenApi2.0文档&lt;/p&gt;
+&lt;h3 id=&#34;文档信息描述&#34;&gt;文档信息描述&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;swagger: &amp;quot;2.0&amp;quot;
 info:
   title: Sample API
   description: API description in Markdown.
@@ -65,103 +748,103 @@ host: api.example.com
 basePath: /v1
 schemes:
   - https
-</code></pre><p><code>swagger: &quot;2.0&quot;</code> 说明当前使用的OpenApi版本，（Openapi 2.0是用swagger2.0标准演化而来）</p>
-<p><code>info</code>对象将描述本文的信息，下表是info对象的所有可用字段</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td>String</td>
-<td>本文标题</td>
-</tr>
-<tr>
-<td>description</td>
-<td>String</td>
-<td>本文的描述信息</td>
-</tr>
-<tr>
-<td>termsOfService</td>
-<td>String</td>
-<td>API的服务条款</td>
-</tr>
-<tr>
-<td>contact</td>
-<td>Object</td>
-<td>联系方式对象</td>
-</tr>
-<tr>
-<td>license</td>
-<td>Object</td>
-<td>许可证对象</td>
-</tr>
-<tr>
-<td>version</td>
-<td>String</td>
-<td>版本</td>
-</tr>
-</tbody>
-</table>
-<p><code>contact</code> 对象用于描述本文作者联系方式</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>本文作者名称</td>
-</tr>
-<tr>
-<td>url</td>
-<td>String</td>
-<td>本文作者的网站</td>
-</tr>
-<tr>
-<td>email</td>
-<td>String</td>
-<td>本文作者的邮件</td>
-</tr>
-</tbody>
-</table>
-<p><code>license</code> 对象用于描述本文遵循的协议</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>协议名称</td>
-</tr>
-<tr>
-<td>url</td>
-<td>String</td>
-<td>协议URL</td>
-</tr>
-</tbody>
-</table>
-<p><code>host</code> 用于描述api的服务器地址，在host中不用填写路径，但是要包括服务所用到的端口号</p>
-<p><code>basePath</code> 用于描述api的基础路径，例如/v1/api</p>
-<p><code>schemes</code> 用于描述使用的传输协议例如<code>http/htttps</code></p>
-<p><code>paths</code>定义了api中每个路径以及这些路径下的的操作方法（GET,POST),如果我们想在users路径下定义一个GET方法，我们可以像下面这样。</p>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;swagger: &amp;quot;2.0&amp;quot;&lt;/code&gt; 说明当前使用的OpenApi版本，（Openapi 2.0是用swagger2.0标准演化而来）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;info&lt;/code&gt;对象将描述本文的信息，下表是info对象的所有可用字段&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;本文标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;本文的描述信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;termsOfService&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;API的服务条款&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;contact&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;联系方式对象&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;license&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;许可证对象&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;version&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;版本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;contact&lt;/code&gt; 对象用于描述本文作者联系方式&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;本文作者名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;本文作者的网站&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;本文作者的邮件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;license&lt;/code&gt; 对象用于描述本文遵循的协议&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;协议名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;协议URL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;host&lt;/code&gt; 用于描述api的服务器地址，在host中不用填写路径，但是要包括服务所用到的端口号&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;basePath&lt;/code&gt; 用于描述api的基础路径，例如/v1/api&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;schemes&lt;/code&gt; 用于描述使用的传输协议例如&lt;code&gt;http/htttps&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;paths&lt;/code&gt;定义了api中每个路径以及这些路径下的的操作方法（GET,POST),如果我们想在users路径下定义一个GET方法，我们可以像下面这样。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /users:
     get:
       tags:
@@ -173,8 +856,8 @@ schemes:
       responses:
         200:
           description: OK
-</code></pre><p><code>tags</code> 关键词可以将多个路径组成一个群组显示，我们可以在全局定义<code>tags</code>关键词</p>
-<pre><code>tags:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;tags&lt;/code&gt; 关键词可以将多个路径组成一个群组显示，我们可以在全局定义&lt;code&gt;tags&lt;/code&gt;关键词&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tags:
   - name: pets
     description: Everything about your Pets
     externalDocs:
@@ -183,17 +866,17 @@ schemes:
     description: Access to Petstore orders
     externalDocs:
       url: http://docs.my-api.com/store-orders.htm
-</code></pre><h3 id="请求参数">请求参数</h3>
-<p>向服务器发起请求时我们以不同的方式提交数据给服务器，</p>
-<ul>
-<li>查询参数: /users?role=admin</li>
-<li>路径参数: /users/{id}</li>
-<li>请求头参数: X-MyHeader: Value</li>
-<li>Request Body 在POST或者PUT请求时上传一段JSON或者XML类型的参数</li>
-<li>form 参数：当Content-Type为application/x-www-form-urlencoded 或者 multipart/form-data</li>
-</ul>
-<h5 id="路径参数">路径参数</h5>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;请求参数&#34;&gt;请求参数&lt;/h3&gt;
+&lt;p&gt;向服务器发起请求时我们以不同的方式提交数据给服务器，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;查询参数: /users?role=admin&lt;/li&gt;
+&lt;li&gt;路径参数: /users/{id}&lt;/li&gt;
+&lt;li&gt;请求头参数: X-MyHeader: Value&lt;/li&gt;
+&lt;li&gt;Request Body 在POST或者PUT请求时上传一段JSON或者XML类型的参数&lt;/li&gt;
+&lt;li&gt;form 参数：当Content-Type为application/x-www-form-urlencoded 或者 multipart/form-data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;路径参数&#34;&gt;路径参数&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /users/{userId}:
     get:
       summary: Returns a user by ID.
@@ -207,8 +890,8 @@ schemes:
       responses:
         200:
           description: OK
-</code></pre><h5 id="查询参数">查询参数</h5>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;查询参数&#34;&gt;查询参数&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /users/{userId}:
     get:
         parameters:
@@ -221,15 +904,15 @@ schemes:
             type: integer
             description: The numbers of items to return.    
             
-</code></pre><h5 id="request-body">Request Body</h5>
-<p>我们可以根据<code>Consumes, Produces</code>关键词描述将要传输的数据格式。例如:</p>
-<pre><code>consumes:
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;request-body&#34;&gt;Request Body&lt;/h5&gt;
+&lt;p&gt;我们可以根据&lt;code&gt;Consumes, Produces&lt;/code&gt;关键词描述将要传输的数据格式。例如:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;consumes:
   - application/json
   - application/xml
 produces:
   - application/json
   - application/xml
-</code></pre><pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;paths:
   /users:
     post:
       summary: Creates a new user.
@@ -253,8 +936,8 @@ produces:
       responses:
         201:
           description: Created
-</code></pre><h5 id="请求头参数">请求头参数</h5>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;请求头参数&#34;&gt;请求头参数&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /ping:
     get:
       summary: Checks if the server is alive.
@@ -263,8 +946,8 @@ produces:
           name: X-Request-ID
           type: string
           required: true
-</code></pre><h5 id="form参数">Form参数</h5>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;form参数&#34;&gt;Form参数&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /survey:
     post:
       summary: A sample survey.
@@ -274,16 +957,16 @@ produces:
         - in: formData
           name: name
           type: string
-          description: A person's name.
+          description: A person&#39;s name.
         - in: formData
           name: fav_number
           type: number
-          description: A person's favorite number.
+          description: A person&#39;s favorite number.
       responses:
         200:
           description: OK
-</code></pre><p>在同一个路径下定义不同的方法</p>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在同一个路径下定义不同的方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /user/{id}:
     parameters:
       - in: path
@@ -298,10 +981,10 @@ produces:
     delete:
       summary: Deletes the user with the specified ID.
 
-</code></pre><p>在定义参数时我们可以将某个参数定义为是否可选通过<code>required: true</code>,参数的默认值<code>default: 0</code>,我们还可以定义参数值的范围 <code>minimum: 1 maximum: 100</code></p>
-<h3 id="响应">响应</h3>
-<p><code>responses</code>对象用于定义响应的内容，响应包括Response Body，HTTP Status Codes，Response Headers,每一个API都必须有一个responses，最基础的定义如下:</p>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在定义参数时我们可以将某个参数定义为是否可选通过&lt;code&gt;required: true&lt;/code&gt;,参数的默认值&lt;code&gt;default: 0&lt;/code&gt;,我们还可以定义参数值的范围 &lt;code&gt;minimum: 1 maximum: 100&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;响应&#34;&gt;响应&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;responses&lt;/code&gt;对象用于定义响应的内容，响应包括Response Body，HTTP Status Codes，Response Headers,每一个API都必须有一个responses，最基础的定义如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /ping:
     get:
       produces:
@@ -309,8 +992,8 @@ produces:
       responses:
         200:
           description: OK
-</code></pre><h5 id="http-status-codes">HTTP Status Codes</h5>
-<pre><code>
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;http-status-codes&#34;&gt;HTTP Status Codes&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;
 responses:
         200:
           description: OK
@@ -321,8 +1004,8 @@ responses:
         404:
           description: A user with the specified ID was not found.
           
-</code></pre><h5 id="response-body">Response Body</h5>
-<pre><code>responses:
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;response-body&#34;&gt;Response Body&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;responses:
         200:
           description: A User object
           schema:
@@ -334,8 +1017,8 @@ responses:
               username:
                 type: string
                 description: The user name.
-</code></pre><h5 id="response-header">Response Header</h5>
-<pre><code>
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;response-header&#34;&gt;Response Header&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;
 paths:
   /ping:
     get:
@@ -355,9 +1038,9 @@ paths:
               format: date-time
               description: The UTC date/time at which the current rate limit window resets.
               
-</code></pre><h3 id="对象重用">对象重用</h3>
-<p>我们可以通过全局关键词<code>definitions</code> 定义一个可重用的对象，然后使用<code>$ref</code>引用这个对象,例如:</p>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;对象重用&#34;&gt;对象重用&lt;/h3&gt;
+&lt;p&gt;我们可以通过全局关键词&lt;code&gt;definitions&lt;/code&gt; 定义一个可重用的对象，然后使用&lt;code&gt;$ref&lt;/code&gt;引用这个对象,例如:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /users:
     post:
       summary: Creates a new user.
@@ -368,12 +1051,12 @@ paths:
           name: user
           description: The user to create.
           schema:
-            $ref: &quot;#/definitions/User&quot;     # &lt;----------
+            $ref: &amp;quot;#/definitions/User&amp;quot;     # &amp;lt;----------
      responses:
          200:
            description: OK
 definitions:
-  User:           # &lt;----------
+  User:           # &amp;lt;----------
     type: object
     required:
       - userName
@@ -384,8 +1067,8 @@ definitions:
         type: string
       lastName:
         type: string
-</code></pre><p>我们也可以在响应中这样使用</p>
-<pre><code>paths:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们也可以在响应中这样使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
   /users:
     get:
       summary: Gets a list of users.
@@ -393,9 +1076,9 @@ definitions:
         200:
           description: OK
           schema:
-            $ref: &quot;#/definitions/ArrayOfUsers&quot;
+            $ref: &amp;quot;#/definitions/ArrayOfUsers&amp;quot;
         401:
-          $ref: &quot;#/responses/Unauthorized&quot;   # &lt;-----
+          $ref: &amp;quot;#/responses/Unauthorized&amp;quot;   # &amp;lt;-----
   /users/{id}:
     get:
       summary: Gets a user by ID.
@@ -403,21 +1086,21 @@ definitions:
         200:
           description: OK
           schema:
-            $ref: &quot;#/definitions/User&quot;
+            $ref: &amp;quot;#/definitions/User&amp;quot;
         401:
-          $ref: &quot;#/responses/Unauthorized&quot;   # &lt;-----
+          $ref: &amp;quot;#/responses/Unauthorized&amp;quot;   # &amp;lt;-----
         404:
-          $ref: &quot;#/responses/NotFound&quot;       # &lt;-----
+          $ref: &amp;quot;#/responses/NotFound&amp;quot;       # &amp;lt;-----
 # Descriptions of common responses
 responses:
   NotFound:
     description: The specified resource was not found
     schema:
-      $ref: &quot;#/definitions/Error&quot;
+      $ref: &amp;quot;#/definitions/Error&amp;quot;
   Unauthorized:
     description: Unauthorized
     schema:
-      $ref: &quot;#/definitions/Error&quot;
+      $ref: &amp;quot;#/definitions/Error&amp;quot;
 definitions:
   # Schema for error response body
   Error:
@@ -430,9 +1113,9 @@ definitions:
     required:
       - code
       - message
-</code></pre><p>在定义对象时我们可以对属性添加一个示例值</p>
-<p>对象</p>
-<pre><code>definitions:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在定义对象时我们可以对属性添加一个示例值&lt;/p&gt;
+&lt;p&gt;对象&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;definitions:
   CatalogItem:
     id:
       type: integer
@@ -451,15 +1134,15 @@ definitions:
           type: integer
       required:
         - url
-      example:   # &lt;-----
+      example:   # &amp;lt;-----
         url: images/38.png
         width: 100
         height: 100
     required:
       - id
       - title
-</code></pre><p>数组</p>
-<pre><code>definitions:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;数组&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;definitions:
   ArrayOfStrings:
     type: array
     items:
@@ -468,18 +1151,67 @@ definitions:
       - foo
       - bar
       - baz
-</code></pre><p>数组中嵌套的对象可以直接引用另一个已经定义好的对象</p>
-<pre><code>definitions:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;数组中嵌套的对象可以直接引用另一个已经定义好的对象&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;definitions:
   ArrayOfCatalogItems:
     type: array
     items:
-      $ref: &quot;#/definitions/CatalogItem&quot;
+      $ref: &amp;quot;#/definitions/CatalogItem&amp;quot;
     example:
       - id: 38
         title: T-shirt
       - id: 114
         title: Phone
-</code></pre>]]></description>
+&lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>使用Swagger生成API文档</title>
+                <link>http://lt7.top/posts/%E4%BD%BF%E7%94%A8swagger%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/%E4%BD%BF%E7%94%A8swagger%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/</guid>
+                <pubDate>Sun, 18 Mar 2018 21:04:40 &#43;0800</pubDate>
+                
+                    <author>mrqter@gmail.com (lintao)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;swagger是一个款强大的API文档生成工具集，他分为swagger-ui，swagger-codegen，swagger-editor。通过这三个工具我们可以编写非常完善Restful API文档。&lt;/p&gt;
+&lt;p&gt;####swagger-ui
+swagger-ui顾名思义这个工具就是用来显示编写好的api文档，这个工具通过解析编写好的json文档显示一个web页面。
+&lt;img src=&#34;http://7u2kla.com1.z0.glb.clouddn.com/15213791666907.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;通过docker安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker pull swaggerapi/swagger-ui
+docker run -p 80:8080 swaggerapi/swagger-ui
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###swagger-editor
+swagger-editor是一个编辑器，可以实时预览修改结果,不过这编辑器对中文支持非常不友好，建议在其他编辑器里写好后再粘贴进来查看语法是否错误
+&lt;img src=&#34;http://7u2kla.com1.z0.glb.clouddn.com/15213793329758.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;同样通过docker安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker pull swaggerapi/swagger-editor
+docker run -d -p 80:8080 swaggerapi/swagger-editor
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###swagger-codegen
+swagger-codegen工具是可以通过编辑好的api(yaml文件)文档直接生成各种后端的代码。现在支持的语言有:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; C# (ASP.NET Core, NancyFx), C++ (Pistache, 
+ Restbed), Erlang, Go, Haskell (Servant), Java 
+ (MSF4J, Spring, Undertow, JAX-RS: CDI, CXF, 
+ Inflector, RestEasy, Play Framework, PKMST), 
+ Kotlin, PHP (Lumen, Slim, Silex, Symfony, Zend 
+ Expressive), Python (Flask), NodeJS, Ruby 
+ (Sinatra, Rails5), Rust (rust-server), Scala 
+ (Finch, Lagom, Scalatra)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###本文将通过openapi3规范编写api文档:
+####OpenAPI规范&lt;/p&gt;
+</description>
                 
                 
                 
@@ -495,49 +1227,49 @@ definitions:
         
             <item>
                 <title>Golang 通过Gitlab持续集成/持续部署（CI/CD</title>
-                <link>https://nsobjects.github.io/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</link>
-                <guid isPermaLink="true">https://nsobjects.github.io/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</guid>
-                <pubDate>Fri, 16 Mar 2018 14:52:41 +0800</pubDate>
+                <link>http://lt7.top/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</guid>
+                <pubDate>Fri, 16 Mar 2018 14:52:41 &#43;0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<p>gitlab自带的CI工具可以非常简单的实现持续集成和持续部署，无需繁琐的安装。
+                    <description>&lt;p&gt;gitlab自带的CI工具可以非常简单的实现持续集成和持续部署，无需繁琐的安装。
 工作流程:
-将代码提交到gitlab-&gt;gitlab进入CI工作流-&gt;GitLab-Runner从gitlab代码服务器拉下最新代码，根据.gitlab-ci.yml执行PIPELINE,
-<img src="media/15211786315251.png" alt=""></p>
-<h1 id="安装gitlab-runner">安装GitLab-Runner:</h1>
-<p><a href="https://docs.gitlab.com/runner/#install-gitlab-runner">https://docs.gitlab.com/runner/#install-gitlab-runner</a></p>
-<p>将这个Runner注册到你运行的Gitlab实例上,这样你的代码每次发生变化Gitlab就会通知这个Runner来执行CI流程，打开项目的Settings-&gt;CI/CD-&gt;Runners settings,找到Specific Runners下面的Gitlab服务器地址和Token
-<img src="media/15211798850111.jpg" alt=""></p>
-<p><a href="https://docs.gitlab.com/runner/#install-gitlab-runner">https://docs.gitlab.com/runner/#install-gitlab-runner</a>
-运行以下命令执行注册</p>
-<pre><code>sudo gitlab-runner register
-</code></pre><p>输入你的GitLab实例URL：</p>
-<pre><code>Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )
+将代码提交到gitlab-&amp;gt;gitlab进入CI工作流-&amp;gt;GitLab-Runner从gitlab代码服务器拉下最新代码，根据.gitlab-ci.yml执行PIPELINE,
+&lt;img src=&#34;media/15211786315251.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;安装gitlab-runner&#34;&gt;安装GitLab-Runner:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.gitlab.com/runner/#install-gitlab-runner&#34;&gt;https://docs.gitlab.com/runner/#install-gitlab-runner&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将这个Runner注册到你运行的Gitlab实例上,这样你的代码每次发生变化Gitlab就会通知这个Runner来执行CI流程，打开项目的Settings-&amp;gt;CI/CD-&amp;gt;Runners settings,找到Specific Runners下面的Gitlab服务器地址和Token
+&lt;img src=&#34;media/15211798850111.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.gitlab.com/runner/#install-gitlab-runner&#34;&gt;https://docs.gitlab.com/runner/#install-gitlab-runner&lt;/a&gt;
+运行以下命令执行注册&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo gitlab-runner register
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入你的GitLab实例URL：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )
 xxx
-</code></pre><p>输入您获得的注册Runner的token：</p>
-<pre><code>Please enter the gitlab-ci token for this runner
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入您获得的注册Runner的token：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Please enter the gitlab-ci token for this runner
 xxx
-</code></pre><p>输入Runner的描述，你可以稍后在GitLab的用户界面中进行更改：</p>
-<pre><code>Please enter the gitlab-ci description for this runner
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入Runner的描述，你可以稍后在GitLab的用户界面中进行更改：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Please enter the gitlab-ci description for this runner
 my-runner
-</code></pre><p>输入与Runner关联的标签，稍后可以在GitLab的用户界面中进行更改：</p>
-<pre><code>Please enter the gitlab-ci tags for this runner (comma separated):
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入与Runner关联的标签，稍后可以在GitLab的用户界面中进行更改：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Please enter the gitlab-ci tags for this runner (comma separated):
 go
-</code></pre><p>选择Runner是否应该选择没有标签的作业，以后可以在GitLab的用户界面中更改它（默认为false）：</p>
-<pre><code>Whether to run untagged jobs [true/false]:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;选择Runner是否应该选择没有标签的作业，以后可以在GitLab的用户界面中更改它（默认为false）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Whether to run untagged jobs [true/false]:
 true
-</code></pre><p>选择是否将Runner锁定到当前项目，您可以稍后在GitLab的用户界面中进行更改。Runner特定时有用（默认为true）：</p>
-<pre><code>Whether to lock Runner to current project [true/false]:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;选择是否将Runner锁定到当前项目，您可以稍后在GitLab的用户界面中进行更改。Runner特定时有用（默认为true）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Whether to lock Runner to current project [true/false]:
 true
-</code></pre><p>输入Runner执行者：
-如果您选择Docker作为您的执行程序，则会要求您为默认图像用于未在其中定义一个的项目.gitlab-ci.yml</p>
-<pre><code>Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, shell:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入Runner执行者：
+如果您选择Docker作为您的执行程序，则会要求您为默认图像用于未在其中定义一个的项目.gitlab-ci.yml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, shell:
 docker
-</code></pre><p>编辑.gitlab-ci.yml文件, 这里使用docker运行环境，省去了构建编译环境的麻烦。</p>
-<pre><code>image: golang:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;编辑.gitlab-ci.yml文件, 这里使用docker运行环境，省去了构建编译环境的麻烦。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;image: golang:latest
 
 variables:
   REPO_NAME: project
@@ -546,14 +1278,14 @@ before_script:
   - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
   - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
   - cd $GOPATH/src/$REPO_NAME
-</code></pre><p><code>image: golang:latest</code>这里告诉Runner将代码运行在哪个容器内运行。<code>variables: REPO_NAME: project</code> 配置变量，跟shell里的变量是一个意思。<code>before_script</code>在执行所有步骤之前执行的一段脚本。这里我们在go/src/目录下根据项目名称创建了一个文件夹，然后从$CI_PROJECT_DIR环境变量获取到代码现在存在的目录，将目录建立一个软链接链接到刚刚创建的go/src/project目录。这样我们就完成了go编译环境的搭建，</p>
-<pre><code>stages:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;image: golang:latest&lt;/code&gt;这里告诉Runner将代码运行在哪个容器内运行。&lt;code&gt;variables: REPO_NAME: project&lt;/code&gt; 配置变量，跟shell里的变量是一个意思。&lt;code&gt;before_script&lt;/code&gt;在执行所有步骤之前执行的一段脚本。这里我们在go/src/目录下根据项目名称创建了一个文件夹，然后从$CI_PROJECT_DIR环境变量获取到代码现在存在的目录，将目录建立一个软链接链接到刚刚创建的go/src/project目录。这样我们就完成了go编译环境的搭建，&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;stages:
     - test
     - build
     - deploy
-</code></pre><p>stages 用于定义执行步骤，每个步骤可以在job中使用。stages的排序定义了Job执行的顺序：
-根据上面定义。首先所有被定义为test的job会并行执行，如果所有的test都执行成功了然后就会执行所有定义为build的job.如果任何先前的Job失败，则提交被标记为failed并且不执行下一步</p>
-<pre><code>test:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;stages 用于定义执行步骤，每个步骤可以在job中使用。stages的排序定义了Job执行的顺序：
+根据上面定义。首先所有被定义为test的job会并行执行，如果所有的test都执行成功了然后就会执行所有定义为build的job.如果任何先前的Job失败，则提交被标记为failed并且不执行下一步&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;test:
     stage: test
     script:
       - cd tests
@@ -570,32 +1302,32 @@ compile:
  deploy_develop:
   stage: deploy
   script:
-    - echo &quot;$SSH_PRIVATE_KEY&quot; &gt;&gt; ~/.ssh/id_dsa
+    - echo &amp;quot;$SSH_PRIVATE_KEY&amp;quot; &amp;gt;&amp;gt; ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
-    - echo -e &quot;Host *\n\tStrictHostKeyChecking no\n\n&quot; &gt; ~/.ssh/config
+    - echo -e &amp;quot;Host *\n\tStrictHostKeyChecking no\n\n&amp;quot; &amp;gt; ~/.ssh/config
     - rsync $CI_PROJECT_DIR/demo root@xxxx:/root/program
-    - ssh root@xxxx &quot;/usr/bin/supervisorctl restart demo&quot;
+    - ssh root@xxxx &amp;quot;/usr/bin/supervisorctl restart demo&amp;quot;
   only:
     - develop
  
 deploy_production:
   stage: deploy
   script:
-    - echo &quot;$SSH_PRIVATE_KEY&quot; &gt;&gt; ~/.ssh/id_dsa
+    - echo &amp;quot;$SSH_PRIVATE_KEY&amp;quot; &amp;gt;&amp;gt; ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
-    - echo -e &quot;Host *\n\tStrictHostKeyChecking no\n\n&quot; &gt; ~/.ssh/config
+    - echo -e &amp;quot;Host *\n\tStrictHostKeyChecking no\n\n&amp;quot; &amp;gt; ~/.ssh/config
     - rsync $CI_PROJECT_DIR/demo root@xxxx:/root/program
-    - ssh root@xxxx &quot;/usr/bin/supervisorctl restart demo&quot;
+    - ssh root@xxxx &amp;quot;/usr/bin/supervisorctl restart demo&amp;quot;
   only:
     - master
-</code></pre><p>这里定义了4个job分别是test,compile,deploy_production,deploy_develop,首先我们执行测试，测试成功后编译出一个可执行文件，然后根据不同的提交分支发布到不同的服务器上部署</p>
-<p>fatal: repository &lsquo;http://gitlab-ci-token:xxxxxxxxxxxxxxxxxxxx@192.168.15.95/lintao/work-doc.git/&rsquo; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里定义了4个job分别是test,compile,deploy_production,deploy_develop,首先我们执行测试，测试成功后编译出一个可执行文件，然后根据不同的提交分支发布到不同的服务器上部署&lt;/p&gt;
+&lt;p&gt;fatal: repository &#39;http://gitlab-ci-token:xxxxxxxxxxxxxxxxxxxx@192.168.15.95/lintao/work-doc.git/&#39; not found
 错误处理
 vim /etc/gitlab-runner/config.toml
-clone_url = &ldquo;http://192.168.15.95:8080/&rdquo;</p>
-<p>FROM golang:latest</p>
-<p>RUN apt-get update -y &amp;&amp; apt-get install openssh-client -y &amp;&amp; apt-get update -y &amp;&amp; apt-get install rsync -y &amp;&amp; mkdir -p ~/.ssh</p>
-]]></description>
+clone_url = &amp;quot;http://192.168.15.95:8080/&amp;quot;&lt;/p&gt;
+&lt;p&gt;FROM golang:latest&lt;/p&gt;
+&lt;p&gt;RUN apt-get update -y &amp;amp;&amp;amp; apt-get install openssh-client -y &amp;amp;&amp;amp; apt-get update -y &amp;amp;&amp;amp; apt-get install rsync -y &amp;amp;&amp;amp; mkdir -p ~/.ssh&lt;/p&gt;
+</description>
                 
                 
                 
@@ -611,28 +1343,28 @@ clone_url = &ldquo;http://192.168.15.95:8080/&rdquo;</p>
         
             <item>
                 <title>Mac安装Gitlab</title>
-                <link>https://nsobjects.github.io/posts/mac%E5%AE%89%E8%A3%85gitlab/</link>
-                <guid isPermaLink="true">https://nsobjects.github.io/posts/mac%E5%AE%89%E8%A3%85gitlab/</guid>
-                <pubDate>Thu, 22 Feb 2018 22:53:00 +0800</pubDate>
+                <link>http://lt7.top/posts/mac%E5%AE%89%E8%A3%85gitlab/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/mac%E5%AE%89%E8%A3%85gitlab/</guid>
+                <pubDate>Thu, 22 Feb 2018 22:53:00 &#43;0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<p>安装环境:
+                    <description>&lt;p&gt;安装环境:
 Docker
-<a href="https://hub.docker.com/r/twang2218/gitlab-ce-zh/">Gitlab中文镜像</a>
-4GB内存</p>
-<p>Docker安装:</p>
-<p>Mac版本下载地址
-<a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">https://store.docker.com/editions/community/docker-ce-desktop-mac</a></p>
-<p>下载完docker后添加Daocloud加速器
-<a href="http://www.daocloud.io/mirror#accelerator-doc">http://www.daocloud.io/mirror#accelerator-doc</a></p>
-<p><img src="http://7u2kla.com1.z0.glb.clouddn.com/%E5%8A%A0%E9%80%9F%E5%99%A8_DaoCloud_-_%E4%B8%9A%E7%95%8C%E9%A2%86%E5%85%88%E7%9A%84%E5%AE%B9%E5%99%A8%E4%BA%91%E5%B9%B3%E5%8F%B0.png" alt="加速器_DaoCloud_-_业界领先的容器云平台"></p>
-<p>下载中文版Gitlab镜像</p>
-<pre><code>docker pull twang2218/gitlab-ce-zh
-</code></pre><p>启动容器:</p>
-<pre><code>docker run -d \
+&lt;a href=&#34;https://hub.docker.com/r/twang2218/gitlab-ce-zh/&#34;&gt;Gitlab中文镜像&lt;/a&gt;
+4GB内存&lt;/p&gt;
+&lt;p&gt;Docker安装:&lt;/p&gt;
+&lt;p&gt;Mac版本下载地址
+&lt;a href=&#34;https://store.docker.com/editions/community/docker-ce-desktop-mac&#34;&gt;https://store.docker.com/editions/community/docker-ce-desktop-mac&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载完docker后添加Daocloud加速器
+&lt;a href=&#34;http://www.daocloud.io/mirror#accelerator-doc&#34;&gt;http://www.daocloud.io/mirror#accelerator-doc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://7u2kla.com1.z0.glb.clouddn.com/%E5%8A%A0%E9%80%9F%E5%99%A8_DaoCloud_-_%E4%B8%9A%E7%95%8C%E9%A2%86%E5%85%88%E7%9A%84%E5%AE%B9%E5%99%A8%E4%BA%91%E5%B9%B3%E5%8F%B0.png&#34; alt=&#34;加速器_DaoCloud_-_业界领先的容器云平台&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下载中文版Gitlab镜像&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker pull twang2218/gitlab-ce-zh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动容器:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker run -d \
     --hostname gitlab.example.com \
     -p 80:80 \
     -p 443:443 \
@@ -644,29 +1376,29 @@ Docker
     -v gitlab-data:/var/opt/gitlab \
     --network gitlab-net \
     twang2218/gitlab-ce-zh:10.4.3
-</code></pre><p>进入容器修改配置</p>
-<pre><code>docker exec -it gitlab bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;进入容器修改配置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker exec -it gitlab bash
 vi /etc/gitlab/gitlab.rb
-</code></pre><p>修改时区</p>
-<pre><code> gitlab_rails['time_zone'] = 'Asia/Shanghai'
-</code></pre><p>配置邮箱:</p>
-<pre><code>### Email Settings
- gitlab_rails['smtp_enable'] = true
- gitlab_rails['smtp_address'] = &quot;smtp.qq.com&quot;
- gitlab_rails['smtp_port'] = 465
- gitlab_rails['smtp_user_name'] = &quot;xxxx@qq.com&quot;
- gitlab_rails['smtp_password'] = &quot;xxxx&quot;
- gitlab_rails['smtp_authentication'] = &quot;login&quot;
- gitlab_rails['smtp_enable_starttls_auto'] = true
- gitlab_rails['smtp_tls'] = true
- gitlab_rails['gitlab_email_from'] = 'xxxx@qq.com'
-</code></pre><p>修改完后更新下配置，<a href="https://docs.gitlab.com/omnibus/settings/smtp.html">更多邮箱配置参考</a></p>
-<pre><code>gitlab-ctl reconfigure
-</code></pre><p>在浏览器打开http://127.0.0.1 首次安装会要几分钟初始化。可能会出现500的情况，初始化完成后就能使用了。
-<img src="http://7u2kla.com1.z0.glb.clouddn.com/%E6%98%9F%E6%A0%87%E9%A1%B9%E7%9B%AE_%C2%B7_%E4%BB%AA%E8%A1%A8%E7%9B%98_%C2%B7_GitLab_%E5%92%8C_2018-02-22_md.png" alt="星标项目_·_仪表盘_·_GitLab_和_2018-02-22_md"></p>
-<p>Gitlab文档
-<a href="https://docs.gitlab.com/omnibus/README.html">https://docs.gitlab.com/omnibus/README.html</a></p>
-]]></description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改时区&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; gitlab_rails[&#39;time_zone&#39;] = &#39;Asia/Shanghai&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置邮箱:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;### Email Settings
+ gitlab_rails[&#39;smtp_enable&#39;] = true
+ gitlab_rails[&#39;smtp_address&#39;] = &amp;quot;smtp.qq.com&amp;quot;
+ gitlab_rails[&#39;smtp_port&#39;] = 465
+ gitlab_rails[&#39;smtp_user_name&#39;] = &amp;quot;xxxx@qq.com&amp;quot;
+ gitlab_rails[&#39;smtp_password&#39;] = &amp;quot;xxxx&amp;quot;
+ gitlab_rails[&#39;smtp_authentication&#39;] = &amp;quot;login&amp;quot;
+ gitlab_rails[&#39;smtp_enable_starttls_auto&#39;] = true
+ gitlab_rails[&#39;smtp_tls&#39;] = true
+ gitlab_rails[&#39;gitlab_email_from&#39;] = &#39;xxxx@qq.com&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改完后更新下配置，&lt;a href=&#34;https://docs.gitlab.com/omnibus/settings/smtp.html&#34;&gt;更多邮箱配置参考&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gitlab-ctl reconfigure
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在浏览器打开http://127.0.0.1 首次安装会要几分钟初始化。可能会出现500的情况，初始化完成后就能使用了。
+&lt;img src=&#34;http://7u2kla.com1.z0.glb.clouddn.com/%E6%98%9F%E6%A0%87%E9%A1%B9%E7%9B%AE_%C2%B7_%E4%BB%AA%E8%A1%A8%E7%9B%98_%C2%B7_GitLab_%E5%92%8C_2018-02-22_md.png&#34; alt=&#34;星标项目_·_仪表盘_·_GitLab_和_2018-02-22_md&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Gitlab文档
+&lt;a href=&#34;https://docs.gitlab.com/omnibus/README.html&#34;&gt;https://docs.gitlab.com/omnibus/README.html&lt;/a&gt;&lt;/p&gt;
+</description>
                 
                 
                 
@@ -682,93 +1414,93 @@ vi /etc/gitlab/gitlab.rb
         
             <item>
                 <title>搭建Shadowsocks服务器</title>
-                <link>https://nsobjects.github.io/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-                <guid isPermaLink="true">https://nsobjects.github.io/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
-                <pubDate>Wed, 01 Nov 2017 11:56:56 +0800</pubDate>
+                <link>http://lt7.top/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+                <pubDate>Wed, 01 Nov 2017 11:56:56 &#43;0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<p>最近VPN总是掉线连不上，所以决定自己搭建一个Shadowsocks服务器,找了各种教程后发现搭建Shadowsocks服务器非常简单
+                    <description>&lt;p&gt;最近VPN总是掉线连不上，所以决定自己搭建一个Shadowsocks服务器,找了各种教程后发现搭建Shadowsocks服务器非常简单
 搭建Shadowsocks需要一个在墙外的服务器。
 ###VPS
 免费：
 亚马逊有免费1年的vps服务器，只需要绑定信用卡就可以了。
 付费：
-<a href="https://www.vultr.com">https://www.vultr.com</a>
-<a href="https://bandwagonhost.com/cart.php">https://bandwagonhost.com/cart.php</a>
-<a href="https://bandwagonhost.com">https://bandwagonhost.com</a>
-<a href="https://www.linode.com">https://www.linode.com</a></p>
-<p>如果对网速有要求只能选香港的vps,看youtube 4K无压力，平时只是用用google推荐使用vultr。创建服务器前最好先测试下网速。</p>
-<p>linode
-<a href="https://www.linode.com/speedtest">https://www.linode.com/speedtest</a>
+&lt;a href=&#34;https://www.vultr.com&#34;&gt;https://www.vultr.com&lt;/a&gt;
+&lt;a href=&#34;https://bandwagonhost.com/cart.php&#34;&gt;https://bandwagonhost.com/cart.php&lt;/a&gt;
+&lt;a href=&#34;https://bandwagonhost.com&#34;&gt;https://bandwagonhost.com&lt;/a&gt;
+&lt;a href=&#34;https://www.linode.com&#34;&gt;https://www.linode.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果对网速有要求只能选香港的vps,看youtube 4K无压力，平时只是用用google推荐使用vultr。创建服务器前最好先测试下网速。&lt;/p&gt;
+&lt;p&gt;linode
+&lt;a href=&#34;https://www.linode.com/speedtest&#34;&gt;https://www.linode.com/speedtest&lt;/a&gt;
 vultr 打开网页后搜索How can I test Vultr download speeds?
-<a href="https://www.vultr.com/faq/">https://www.vultr.com/faq/</a></p>
-<p>###安装GO
+&lt;a href=&#34;https://www.vultr.com/faq/&#34;&gt;https://www.vultr.com/faq/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###安装GO
 首先在官网找到最新二进制版本的连接
-<a href="https://golang.org/dl/">https://golang.org/dl/</a></p>
-<p>####下载二进制包
-<code>wget https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz</code></p>
-<p>####解压到Local目录下</p>
-<p><code>sudo tar -xzf go1.8.1.linux-amd64.tar.gz -C /usr/local</code></p>
-<p>####设置环境变量</p>
-<p><code>vim /etc/profile</code></p>
-<pre><code>export PATH=$PATH:/usr/local/go/bin
+&lt;a href=&#34;https://golang.org/dl/&#34;&gt;https://golang.org/dl/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;####下载二进制包
+&lt;code&gt;wget https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####解压到Local目录下&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo tar -xzf go1.8.1.linux-amd64.tar.gz -C /usr/local&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####设置环境变量&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vim /etc/profile&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/work
 export PATH=$GOPATH/bin:$PATH
-</code></pre><p><code>source /etc/profile</code></p>
-<p>###安装supervisor
-<code>apt-get -y install supervisor</code></p>
-<p><code>vim /etc/supervisor/conf.d/shadowsocks.conf</code></p>
-<pre><code>[program:shadowsocks]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;source /etc/profile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;###安装supervisor
+&lt;code&gt;apt-get -y install supervisor&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vim /etc/supervisor/conf.d/shadowsocks.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[program:shadowsocks]
 command=/root/work/bin/shadowsocks-server -c config.json
 directory=/root
 autostart=true
 autorestart=true
-</code></pre><p>###安装Go版本shadowsocks
-<code>go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server</code></p>
-<p>####创建配置文件
-<code>vim config.json</code>
-####参数</p>
-<pre><code>server          vps公网ip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###安装Go版本shadowsocks
+&lt;code&gt;go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####创建配置文件
+&lt;code&gt;vim config.json&lt;/code&gt;
+####参数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server          vps公网ip
 server_port     服务器端口， 需要在安全组里打开这个端口，不然客户端无法访问
 local_port      本地socks5代理端口
 method          加密方式,下面是所有支持的加密方式:
                  aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, cast5-cfb, des-cfb, rc4-md5, chacha20, salsa20, rc4,
 password        用于加密传输的密码r
 timeout         超时设置，以秒为单位
-</code></pre><pre><code>{
-  &quot;server&quot;:&quot;xxx.xxx.xxx.xx&quot;,
-  &quot;server_port&quot;:2333,
-  &quot;local_port&quot;:1080,
-  &quot;password&quot;:&quot;123456&quot;,
-  &quot;timeout&quot;:60,
-  &quot;method&quot;:&quot;aes-256-cfb&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;server&amp;quot;:&amp;quot;xxx.xxx.xxx.xx&amp;quot;,
+  &amp;quot;server_port&amp;quot;:2333,
+  &amp;quot;local_port&amp;quot;:1080,
+  &amp;quot;password&amp;quot;:&amp;quot;123456&amp;quot;,
+  &amp;quot;timeout&amp;quot;:60,
+  &amp;quot;method&amp;quot;:&amp;quot;aes-256-cfb&amp;quot;
 }
-</code></pre><p>Mac os使用
-首先下载客户端,NG是最新版的功能比较多。</p>
-<pre><code>https://sourceforge.net/projects/shadowsocksgui/?source=typ_redirect
-</code></pre><pre><code>https://github.com/shadowsocks/ShadowsocksX-NG/releases/download/v1.6.1/ShadowsocksX-NG.1.6.1.zip
-</code></pre><p>iOS推荐使用Wingy，非常方便的小工具
-<img src="http://7u2kla.com1.z0.glb.clouddn.com/15101075736153.jpg" alt=""></p>
-<p>linux上使用
-先下载客户端程序。然后编辑config文件</p>
-<pre><code>go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-local
-</code></pre><pre><code>{
-    &quot;server&quot;:&quot;xx.xx.xx.xx&quot;, 服务器地址
-    &quot;server_port&quot;:8080, 服务器端口
-    &quot;local_port&quot;:1080, 本地监听的端口
-    &quot;password&quot;:&quot;123456&quot;,
-    &quot;method&quot;: &quot;aes-128-cfb-auth&quot;,
-    &quot;timeout&quot;:600
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Mac os使用
+首先下载客户端,NG是最新版的功能比较多。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://sourceforge.net/projects/shadowsocksgui/?source=typ_redirect
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;https://github.com/shadowsocks/ShadowsocksX-NG/releases/download/v1.6.1/ShadowsocksX-NG.1.6.1.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;iOS推荐使用Wingy，非常方便的小工具
+&lt;img src=&#34;http://7u2kla.com1.z0.glb.clouddn.com/15101075736153.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;linux上使用
+先下载客户端程序。然后编辑config文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-local
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;server&amp;quot;:&amp;quot;xx.xx.xx.xx&amp;quot;, 服务器地址
+    &amp;quot;server_port&amp;quot;:8080, 服务器端口
+    &amp;quot;local_port&amp;quot;:1080, 本地监听的端口
+    &amp;quot;password&amp;quot;:&amp;quot;123456&amp;quot;,
+    &amp;quot;method&amp;quot;: &amp;quot;aes-128-cfb-auth&amp;quot;,
+    &amp;quot;timeout&amp;quot;:600
 }
-</code></pre><p>在后台启动这个服务
-<code>nohup ./shadowsocks-local config.json &amp;</code></p>
-<p>在linux上使用需要浏览器设置好代理方式。以firefox为例;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在后台启动这个服务
+&lt;code&gt;nohup ./shadowsocks-local config.json &amp;amp;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在linux上使用需要浏览器设置好代理方式。以firefox为例;
 先安装AutoProxy-ng插件
-<img src="http://7u2kla.com1.z0.glb.clouddn.com/15101081468737.jpg" alt=""></p>
-]]></description>
+&lt;img src=&#34;http://7u2kla.com1.z0.glb.clouddn.com/15101081468737.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
                 
                 
                 
@@ -784,50 +1516,50 @@ timeout         超时设置，以秒为单位
         
             <item>
                 <title>Mysql配置主从同步</title>
-                <link>https://nsobjects.github.io/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</link>
-                <guid isPermaLink="true">https://nsobjects.github.io/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</guid>
-                <pubDate>Wed, 01 Nov 2017 10:07:29 +0800</pubDate>
+                <link>http://lt7.top/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</guid>
+                <pubDate>Wed, 01 Nov 2017 10:07:29 &#43;0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<p>参考
-<a href="https://dev.mysql.com/doc/refman/5.7/en/replication.html">Mysql官方文档</a></p>
-<p>##主机配置:</p>
-<p><strong>修改My.conf</strong></p>
-<p><code>server-id              = 1</code>
+                    <description>&lt;p&gt;参考
+&lt;a href=&#34;https://dev.mysql.com/doc/refman/5.7/en/replication.html&#34;&gt;Mysql官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##主机配置:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;修改My.conf&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;server-id              = 1&lt;/code&gt;
 主机Id
-<code>log_bin           		= mast-binlog</code>
+&lt;code&gt;log_bin           		= mast-binlog&lt;/code&gt;
 binlog存放位置
-<code>log-bin-index           = master-binlog.index</code>
+&lt;code&gt;log-bin-index           = master-binlog.index&lt;/code&gt;
 存放binlog索引
-<code>expire_logs_days       = 10</code>
+&lt;code&gt;expire_logs_days       = 10&lt;/code&gt;
 binlog过期时间
-<code>max_binlog_size        = 200M</code>
+&lt;code&gt;max_binlog_size        = 200M&lt;/code&gt;
 binlog文件大小
-<code>binlog_do_db           = database</code>
-binlog只对那些库启用</p>
-<p>确保skip-networking主服务器上未启用该选项。如果网络被禁用，则从机不能与主机通信，并且复制失败。
-确保bind-address主机上没有启用改选项或者修改成0.0.0.0</p>
-<p>log_bin和log-bin-index可以自定义存储目录。修改默认存储路径时需要修改mysql的访问权限。</p>
-<pre><code>vim /etc/apparmor.d/usr.sbin.mysqld
-</code></pre><p>配置好My.conf和apparmor后需要重启配置才能生效</p>
-<p>在主机上创建一个用户给从机连接</p>
-<pre><code>CREATE USER 'slave_mysql'@'%' IDENTIFIED BY 'mmp123';
-GRANT REPLICATION SLAVE ON *.* TO 'slave_mysql'@'%';
-</code></pre><p>创建完用户有刷新权限
-<code>flush privileges;</code></p>
-<p>锁住数据库用mysqldump将这个数据库备份发给从机，配置好从机再解锁</p>
-<pre><code>FLUSH TABLES WITH READ LOCK;
+&lt;code&gt;binlog_do_db           = database&lt;/code&gt;
+binlog只对那些库启用&lt;/p&gt;
+&lt;p&gt;确保skip-networking主服务器上未启用该选项。如果网络被禁用，则从机不能与主机通信，并且复制失败。
+确保bind-address主机上没有启用改选项或者修改成0.0.0.0&lt;/p&gt;
+&lt;p&gt;log_bin和log-bin-index可以自定义存储目录。修改默认存储路径时需要修改mysql的访问权限。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vim /etc/apparmor.d/usr.sbin.mysqld
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置好My.conf和apparmor后需要重启配置才能生效&lt;/p&gt;
+&lt;p&gt;在主机上创建一个用户给从机连接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CREATE USER &#39;slave_mysql&#39;@&#39;%&#39; IDENTIFIED BY &#39;mmp123&#39;;
+GRANT REPLICATION SLAVE ON *.* TO &#39;slave_mysql&#39;@&#39;%&#39;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建完用户有刷新权限
+&lt;code&gt;flush privileges;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;锁住数据库用mysqldump将这个数据库备份发给从机，配置好从机再解锁&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;FLUSH TABLES WITH READ LOCK;
 UNLOCK TABLES;
-</code></pre><p>查看主机当前在用哪个binlog文件写入和写入位置</p>
-<p><code>SHOW MASTER STATUS;</code></p>
-<pre><code>File                   postion   Binglog-Do-DB
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查看主机当前在用哪个binlog文件写入和写入位置&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;SHOW MASTER STATUS;&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;File                   postion   Binglog-Do-DB
 master-bin.00001    	004       database
-</code></pre><p>从机配置</p>
-<p><strong>修改My.conf</strong></p>
-<pre><code>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;从机配置&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;修改My.conf&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
 ```server-id = 2```
 从机ID不能和主机一样
 ```replicate-do-db=database```
@@ -837,67 +1569,67 @@ master-bin.00001    	004       database
 
 配置好my.conf后重启从机，然后在从机配置主机信息
 
-</code></pre><p><a href="https://dev.mysql.com/doc/refman/5.7/en/change-master-to.html">CHANGE MASTER TO 完整语法介绍</a></p>
-<p>从机配置
-<a href="https://mysql.az/2015/04/12/change-binary-log-and-relay-log-location-to-home/">https://mysql.az/2015/04/12/change-binary-log-and-relay-log-location-to-home/</a></p>
-<p>查看Binlog
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/5.7/en/change-master-to.html&#34;&gt;CHANGE MASTER TO 完整语法介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从机配置
+&lt;a href=&#34;https://mysql.az/2015/04/12/change-binary-log-and-relay-log-location-to-home/&#34;&gt;https://mysql.az/2015/04/12/change-binary-log-and-relay-log-location-to-home/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;查看Binlog
 binlog无法查看解决办法
-mysqlbinlog: [ERROR] unknown variable &lsquo;default-character-set=utf8&rsquo;
-mysqlbinlog &ndash;no-defaults &ndash;set-charset=utf8 master-bin.080541
+mysqlbinlog: [ERROR] unknown variable &#39;default-character-set=utf8&#39;
+mysqlbinlog --no-defaults --set-charset=utf8 master-bin.080541
 查看Row模式下的binlog
-mysqlbinlog  &ndash;no-defaults &ndash;set-charset=utf8 -v &ndash;base64-output=DECODE-ROWS master-bin.080541</p>
-<p><a href="https://dev.mysql.com/doc/refman/5.7/en/mysqlbinlog-row-events.html">https://dev.mysql.com/doc/refman/5.7/en/mysqlbinlog-row-events.html</a></p>
-<p>创建过滤规则
-CHANGE REPLICATION FILTER filter[, filter][, &hellip;]</p>
-<p>filter:
+mysqlbinlog  --no-defaults --set-charset=utf8 -v --base64-output=DECODE-ROWS master-bin.080541&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/5.7/en/mysqlbinlog-row-events.html&#34;&gt;https://dev.mysql.com/doc/refman/5.7/en/mysqlbinlog-row-events.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;创建过滤规则
+CHANGE REPLICATION FILTER filter[, filter][, ...]&lt;/p&gt;
+&lt;p&gt;filter:
 REPLICATE_DO_DB = (db_list)
 | REPLICATE_IGNORE_DB = (db_list)
 | REPLICATE_DO_TABLE = (tbl_list)
 | REPLICATE_IGNORE_TABLE = (tbl_list)
 | REPLICATE_WILD_DO_TABLE = (wild_tbl_list)
 | REPLICATE_WILD_IGNORE_TABLE = (wild_tbl_list)
-| REPLICATE_REWRITE_DB = (db_pair_list)</p>
-<p>CHANGE REPLICATION FILTER
-REPLICATE_IGNORE_TABLE = ()</p>
-<p>db_list:
-db_name[, db_name][, &hellip;]</p>
-<p>tbl_list:
-db_name.table_name[, db_table_name][, &hellip;]
+| REPLICATE_REWRITE_DB = (db_pair_list)&lt;/p&gt;
+&lt;p&gt;CHANGE REPLICATION FILTER
+REPLICATE_IGNORE_TABLE = ()&lt;/p&gt;
+&lt;p&gt;db_list:
+db_name[, db_name][, ...]&lt;/p&gt;
+&lt;p&gt;tbl_list:
+db_name.table_name[, db_table_name][, ...]
 wild_tbl_list:
-&lsquo;db_pattern.table_pattern&rsquo;[, &lsquo;db_pattern.table_pattern&rsquo;][, &hellip;]</p>
-<p>db_pair_list:
-(db_pair)[, (db_pair)][, &hellip;]</p>
-<p>db_pair:
-from_db, to_db</p>
-<pre><code>CHANGE REPLICATION FILTER
-</code></pre>
-<p>REPLICATE_WILD_IGNORE_TABLE = (&lsquo;db1.new%&rsquo;, &lsquo;db2.new%');</p>
-<p>日志清理
+&#39;db_pattern.table_pattern&#39;[, &#39;db_pattern.table_pattern&#39;][, ...]&lt;/p&gt;
+&lt;p&gt;db_pair_list:
+(db_pair)[, (db_pair)][, ...]&lt;/p&gt;
+&lt;p&gt;db_pair:
+from_db, to_db&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CHANGE REPLICATION FILTER
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;REPLICATE_WILD_IGNORE_TABLE = (&#39;db1.new%&#39;, &#39;db2.new%&#39;);&lt;/p&gt;
+&lt;p&gt;日志清理
 PURGE MASTER LOGS BEFORE DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)
-<a href="http://www.ttlsa.com/mysql/mysql-5-7-enhanced-multi-thread-salve/">http://www.ttlsa.com/mysql/mysql-5-7-enhanced-multi-thread-salve/</a>
+&lt;a href=&#34;http://www.ttlsa.com/mysql/mysql-5-7-enhanced-multi-thread-salve/&#34;&gt;http://www.ttlsa.com/mysql/mysql-5-7-enhanced-multi-thread-salve/&lt;/a&gt;
 从机开启多线程
 STOP SLAVE;
-SET GLOBAL master_info_repository = &lsquo;TABLE&rsquo;
-SET GLOBAL relay_log_info_repository = &lsquo;TABLE&rsquo;
+SET GLOBAL master_info_repository = &#39;TABLE&#39;
+SET GLOBAL relay_log_info_repository = &#39;TABLE&#39;
 SET GLOBAL relay_log_recovery =
 SET GLOBAL slave_parallel_type=LOGICAL_CLOCK;
-<br>
-START slave</p>
-<p><a href="https://www.percona.com/blog/2013/02/08/how-to-createrestore-a-slave-using-gtid-replication-in-mysql-5-6/">https://www.percona.com/blog/2013/02/08/how-to-createrestore-a-slave-using-gtid-replication-in-mysql-5-6/</a></p>
-<p>同步出错解决方案
-The slave is connecting using CHANGE MASTER TO MASTER_AUTO_POSITION = 1, but the master has purged binary logs containing GTIDs that the slave requires.</p>
-<p>这个是由于在主库上执行过purge binary logs，然后当从库change master的时候，却要执行那些事务。
+&lt;br&gt;
+START slave&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.percona.com/blog/2013/02/08/how-to-createrestore-a-slave-using-gtid-replication-in-mysql-5-6/&#34;&gt;https://www.percona.com/blog/2013/02/08/how-to-createrestore-a-slave-using-gtid-replication-in-mysql-5-6/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;同步出错解决方案
+The slave is connecting using CHANGE MASTER TO MASTER_AUTO_POSITION = 1, but the master has purged binary logs containing GTIDs that the slave requires.&lt;/p&gt;
+&lt;p&gt;这个是由于在主库上执行过purge binary logs，然后当从库change master的时候，却要执行那些事务。
 你可以在主库上先查找哪些gtid被purge了。
-show global variables like &lsquo;gtid_purged&rsquo;;
+show global variables like &#39;gtid_purged&#39;;
 然后拿着这个value，去从库上依次
 stop slave;
-set global gtid_purged = &lsquo;xxx&rsquo;; # xxx是你主库上查到的value。
+set global gtid_purged = &#39;xxx&#39;; # xxx是你主库上查到的value。
 start slave;
 这样能跳过执行被主库已经purge的事务了。
 如果出现
 @@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_EXECUTED is empty.
-reset master后在执行</p>
-]]></description>
+reset master后在执行&lt;/p&gt;
+</description>
                 
                 
                 
