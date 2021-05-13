@@ -7,6 +7,7 @@ draft: false
 ## 前言
 在公司项目中使用go-micro作为微服务框架，但是随着服务越来越多线上监控发现内存在不断上涨，后来使用pprof定位到具体原因并修复，本文介绍我是如何通过pprof一步一步找出这个问题
 ![](/static/images/pleak.png)
+![Example image](/images/pleak.png)
 ## pprof是什么？
 > pprof is a tool for visualization and analysis of profiling data.
 

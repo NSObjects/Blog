@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Gopher</title>
     <subtitle type="html">Gopher</subtitle>
-    <updated>2021-05-13T21:04:40&#43;08:00</updated>
+    <updated>2021-05-13T21:21:16&#43;08:00</updated>
     <id>http://lt7.top/</id>
     <link rel="alternate" type="text/html" href="http://lt7.top/" />
     <link rel="self" type="application/atom&#43;xml" href="http://lt7.top/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">使用pprof解决内存泄露</title>
             <link rel="alternate" type="text/html" href="http://lt7.top/posts/%E4%BD%BF%E7%94%A8pprof%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/" />
             <id>http://lt7.top/posts/%E4%BD%BF%E7%94%A8pprof%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/</id>
-            <updated>2021-05-13T21:03:00&#43;08:00</updated>
+            <updated>2021-05-13T21:21:02&#43;08:00</updated>
             <published>2021-05-13T20:21:21&#43;08:00</published>
             <author>
                     <name>lintao</name>
@@ -31,7 +31,8 @@
             
                 <content type="html">&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在公司项目中使用go-micro作为微服务框架，但是随着服务越来越多线上监控发现内存在不断上涨，后来使用pprof定位到具体原因并修复，本文介绍我是如何通过pprof一步一步找出这个问题
-&lt;img src=&#34;static/images/pleak.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;http://lt7.top/static/images/pleak.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;http://lt7.top/images/pleak.png&#34; alt=&#34;Example image&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;pprof是什么&#34;&gt;pprof是什么？&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;pprof is a tool for visualization and analysis of profiling data.&lt;/p&gt;

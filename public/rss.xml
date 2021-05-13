@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 13 May 2021 21:04:40 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 13 May 2021 21:21:16 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="http://lt7.top/rss.xml" />
         
@@ -40,7 +40,8 @@
                 
                     <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在公司项目中使用go-micro作为微服务框架，但是随着服务越来越多线上监控发现内存在不断上涨，后来使用pprof定位到具体原因并修复，本文介绍我是如何通过pprof一步一步找出这个问题
-&lt;img src=&#34;static/images/pleak.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;http://lt7.top/static/images/pleak.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;http://lt7.top/images/pleak.png&#34; alt=&#34;Example image&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;pprof是什么&#34;&gt;pprof是什么？&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;pprof is a tool for visualization and analysis of profiling data.&lt;/p&gt;
