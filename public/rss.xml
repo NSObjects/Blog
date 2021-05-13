@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Gopher</title>
-        <link>http://lt7.top/</link>
+        <link>https://nsobjects.github.io/blog/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.82.0 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 13 May 2021 10:05:27 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 13 May 2021 10:25:06 +0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss+xml" href="http://lt7.top/rss.xml" />
+            <atom:link rel="self" type="application/rss+xml" href="https://nsobjects.github.io/blog/rss.xml" />
         
         
             <item>
                 <title>OpenApi2.0</title>
-                <link>http://lt7.top/posts/openapi2.0/</link>
-                <guid isPermaLink="true">http://lt7.top/posts/openapi2.0/</guid>
+                <link>https://nsobjects.github.io/blog/posts/openapi2.0/</link>
+                <guid isPermaLink="true">https://nsobjects.github.io/blog/posts/openapi2.0/</guid>
                 <pubDate>Tue, 27 Mar 2018 21:45:57 +0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
@@ -495,8 +495,8 @@ definitions:
         
             <item>
                 <title>Golang 通过Gitlab持续集成/持续部署（CI/CD</title>
-                <link>http://lt7.top/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</link>
-                <guid isPermaLink="true">http://lt7.top/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</guid>
+                <link>https://nsobjects.github.io/blog/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</link>
+                <guid isPermaLink="true">https://nsobjects.github.io/blog/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</guid>
                 <pubDate>Fri, 16 Mar 2018 14:52:41 +0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
@@ -611,8 +611,8 @@ clone_url = &ldquo;http://192.168.15.95:8080/&rdquo;</p>
         
             <item>
                 <title>Mac安装Gitlab</title>
-                <link>http://lt7.top/posts/mac%E5%AE%89%E8%A3%85gitlab/</link>
-                <guid isPermaLink="true">http://lt7.top/posts/mac%E5%AE%89%E8%A3%85gitlab/</guid>
+                <link>https://nsobjects.github.io/blog/posts/mac%E5%AE%89%E8%A3%85gitlab/</link>
+                <guid isPermaLink="true">https://nsobjects.github.io/blog/posts/mac%E5%AE%89%E8%A3%85gitlab/</guid>
                 <pubDate>Thu, 22 Feb 2018 22:53:00 +0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
@@ -682,8 +682,8 @@ vi /etc/gitlab/gitlab.rb
         
             <item>
                 <title>搭建Shadowsocks服务器</title>
-                <link>http://lt7.top/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-                <guid isPermaLink="true">http://lt7.top/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+                <link>https://nsobjects.github.io/blog/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+                <guid isPermaLink="true">https://nsobjects.github.io/blog/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
                 <pubDate>Wed, 01 Nov 2017 11:56:56 +0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
@@ -784,8 +784,8 @@ timeout         超时设置，以秒为单位
         
             <item>
                 <title>Mysql配置主从同步</title>
-                <link>http://lt7.top/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</link>
-                <guid isPermaLink="true">http://lt7.top/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</guid>
+                <link>https://nsobjects.github.io/blog/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</link>
+                <guid isPermaLink="true">https://nsobjects.github.io/blog/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</guid>
                 <pubDate>Wed, 01 Nov 2017 10:07:29 +0800</pubDate>
                 
                     <author>mrqter@gmail.com (lintao)</author>
