@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Gopher</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-05-13T07:12:32+08:00</updated>
+    <updated>2021-05-13T10:05:27+08:00</updated>
     <id>http://lt7.top/</id>
     <link rel="alternate" type="text/html" href="http://lt7.top/" />
     <link rel="self" type="application/atom+xml" href="http://lt7.top/atom.xml" />
@@ -15,12 +15,12 @@
                 <email>mrqter@gmail.com</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
-    <generator uri="https://gohugo.io/" version="0.82.1">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.82.0">Hugo</generator>
         <entry>
             <title type="text">OpenApi2.0</title>
             <link rel="alternate" type="text/html" href="http://lt7.top/posts/openapi2.0/" />
             <id>http://lt7.top/posts/openapi2.0/</id>
-            <updated>2021-04-26T09:30:11+08:00</updated>
+            <updated>2021-05-13T10:03:57+08:00</updated>
             <published>2018-03-27T21:45:57+08:00</published>
             <author>
                     <name>lintao</name>
@@ -494,7 +494,7 @@ definitions:
             <title type="text">Golang 通过Gitlab持续集成/持续部署（CI/CD</title>
             <link rel="alternate" type="text/html" href="http://lt7.top/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/" />
             <id>http://lt7.top/posts/golang%E9%80%9A%E8%BF%87gitlab-cicd/</id>
-            <updated>2021-04-12T05:03:17+08:00</updated>
+            <updated>2021-05-13T10:03:57+08:00</updated>
             <published>2018-03-16T14:52:41+08:00</published>
             <author>
                     <name>lintao</name>
@@ -619,34 +619,33 @@ clone_url = &ldquo;http://192.168.15.95:8080/&rdquo;</p>
             <title type="text">Mac安装Gitlab</title>
             <link rel="alternate" type="text/html" href="http://lt7.top/posts/mac%E5%AE%89%E8%A3%85gitlab/" />
             <id>http://lt7.top/posts/mac%E5%AE%89%E8%A3%85gitlab/</id>
-            <updated>2021-05-13T07:09:57+08:00</updated>
+            <updated>2021-05-13T10:03:57+08:00</updated>
             <published>2018-02-22T22:53:00+08:00</published>
             <author>
                     <name>lintao</name>
                     <uri>https://lintao.wiki/</uri>
                     <email>mrqter@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[ceshi
-安装环境: Docker Gitlab 中文镜像 4GB 内存
-Docker 安装:
-Mac 版本下载地址 https://store.docker.com/editions/community/docker-ce-desktop-mac
-下载完 docker 后添加 Daocloud 加速器 http://www.daocloud.io/mirror#accelerator-doc
-下载中文版 Gitlab 镜像
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"><![CDATA[安装环境: Docker Gitlab中文镜像 4GB内存
+Docker安装:
+Mac版本下载地址 https://store.docker.com/editions/community/docker-ce-desktop-mac
+下载完docker后添加Daocloud加速器 http://www.daocloud.io/mirror#accelerator-doc
+下载中文版Gitlab镜像
 docker pull twang2218/gitlab-ce-zh 启动容器:
-docker run -d \ --hostname gitlab.example.com \ -p 80:80 \ -p 443:443 \ -p 22:22 \ --name gitlab \ --restart unless-stopped \ -v gitlab-config:/etc/gitlab \ -v gitlab-logs:/var/log/gitlab \ -v gitlab-data:/var/opt/gitlab \ --network gitlab-net \ twang2218/gitlab-ce-zh:10.]]></summary>
+docker run -d \ --hostname gitlab.example.com \ -p 80:80 \ -p 443:443 \ -p 22:22 \ --name gitlab \ --restart unless-stopped \ -v gitlab-config:/etc/gitlab \ -v gitlab-logs:/var/log/gitlab \ -v gitlab-data:/var/opt/gitlab \ --network gitlab-net \ twang2218/gitlab-ce-zh:10.4.3 进入容器修改配置
+docker exec -it gitlab bash vi /etc/gitlab/gitlab.]]></summary>
             
-                <content type="html"><![CDATA[<p>ceshi</p>
-<p>安装环境:
+                <content type="html"><![CDATA[<p>安装环境:
 Docker
-<a href="https://hub.docker.com/r/twang2218/gitlab-ce-zh/">Gitlab 中文镜像</a>
-4GB 内存</p>
-<p>Docker 安装:</p>
-<p>Mac 版本下载地址
+<a href="https://hub.docker.com/r/twang2218/gitlab-ce-zh/">Gitlab中文镜像</a>
+4GB内存</p>
+<p>Docker安装:</p>
+<p>Mac版本下载地址
 <a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">https://store.docker.com/editions/community/docker-ce-desktop-mac</a></p>
-<p>下载完 docker 后添加 Daocloud 加速器
+<p>下载完docker后添加Daocloud加速器
 <a href="http://www.daocloud.io/mirror#accelerator-doc">http://www.daocloud.io/mirror#accelerator-doc</a></p>
 <p><img src="http://7u2kla.com1.z0.glb.clouddn.com/%E5%8A%A0%E9%80%9F%E5%99%A8_DaoCloud_-_%E4%B8%9A%E7%95%8C%E9%A2%86%E5%85%88%E7%9A%84%E5%AE%B9%E5%99%A8%E4%BA%91%E5%B9%B3%E5%8F%B0.png" alt="加速器_DaoCloud_-_业界领先的容器云平台"></p>
-<p>下载中文版 Gitlab 镜像</p>
+<p>下载中文版Gitlab镜像</p>
 <pre><code>docker pull twang2218/gitlab-ce-zh
 </code></pre><p>启动容器:</p>
 <pre><code>docker run -d \
@@ -679,9 +678,9 @@ vi /etc/gitlab/gitlab.rb
  gitlab_rails['gitlab_email_from'] = 'xxxx@qq.com'
 </code></pre><p>修改完后更新下配置，<a href="https://docs.gitlab.com/omnibus/settings/smtp.html">更多邮箱配置参考</a></p>
 <pre><code>gitlab-ctl reconfigure
-</code></pre><p>在浏览器打开http://127.0.0.1 首次安装会要几分钟初始化。可能会出现 500 的情况，初始化完成后就能使用了。
+</code></pre><p>在浏览器打开http://127.0.0.1 首次安装会要几分钟初始化。可能会出现500的情况，初始化完成后就能使用了。
 <img src="http://7u2kla.com1.z0.glb.clouddn.com/%E6%98%9F%E6%A0%87%E9%A1%B9%E7%9B%AE_%C2%B7_%E4%BB%AA%E8%A1%A8%E7%9B%98_%C2%B7_GitLab_%E5%92%8C_2018-02-22_md.png" alt="星标项目_·_仪表盘_·_GitLab_和_2018-02-22_md"></p>
-<p>Gitlab 文档
+<p>Gitlab文档
 <a href="https://docs.gitlab.com/omnibus/README.html">https://docs.gitlab.com/omnibus/README.html</a></p>
 ]]></content>
             
@@ -701,7 +700,7 @@ vi /etc/gitlab/gitlab.rb
             <title type="text">搭建Shadowsocks服务器</title>
             <link rel="alternate" type="text/html" href="http://lt7.top/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/" />
             <id>http://lt7.top/posts/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
-            <updated>2021-04-12T05:03:17+08:00</updated>
+            <updated>2021-05-13T10:03:57+08:00</updated>
             <published>2017-11-01T11:56:56+08:00</published>
             <author>
                     <name>lintao</name>
@@ -816,7 +815,7 @@ timeout         超时设置，以秒为单位
             <title type="text">Mysql配置主从同步</title>
             <link rel="alternate" type="text/html" href="http://lt7.top/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" />
             <id>http://lt7.top/posts/mysql%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</id>
-            <updated>2021-04-12T05:03:17+08:00</updated>
+            <updated>2021-05-13T10:03:57+08:00</updated>
             <published>2017-11-01T10:07:29+08:00</published>
             <author>
                     <name>lintao</name>
