@@ -10,7 +10,7 @@
         <title>Gopher</title>
         <link>http://lt7.top/</link>
         <description>Gopher</description>
-        <generator>Hugo 0.82.0 https://gohugo.io/</generator>
+        <generator>Hugo 0.82.1 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
@@ -23,10 +23,756 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 13 May 2021 14:54:51 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 13 May 2021 21:04:40 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="http://lt7.top/rss.xml" />
         
+        
+            <item>
+                <title>使用pprof解决内存泄露</title>
+                <link>http://lt7.top/posts/%E4%BD%BF%E7%94%A8pprof%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/%E4%BD%BF%E7%94%A8pprof%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/</guid>
+                <pubDate>Thu, 13 May 2021 20:21:21 &#43;0800</pubDate>
+                
+                    <author>mrqter@gmail.com (lintao)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在公司项目中使用go-micro作为微服务框架，但是随着服务越来越多线上监控发现内存在不断上涨，后来使用pprof定位到具体原因并修复，本文介绍我是如何通过pprof一步一步找出这个问题
+&lt;img src=&#34;static/images/pleak.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pprof是什么&#34;&gt;pprof是什么？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pprof is a tool for visualization and analysis of profiling data.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pprof reads a collection of  samples in profile.proto format and generates reports to visualize and help analyze the data. It can generate both text and graphical reports (through the use of the dot visualization package).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;pprof是用于可视化和分析性能分析数据的工具，可以通过收集到的采样数据生成文本或者图形报告
+![]c&lt;/p&gt;
+&lt;h2 id=&#34;开启pprof&#34;&gt;开启pprof&lt;/h2&gt;
+&lt;p&gt;在main包导入pprof就可以开启pprof，如果使用gin,echo可以到github查找对应的插件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;_ &amp;quot;net/http/pprof&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>什么是网络协议?</title>
+                <link>http://lt7.top/posts/my-first-post/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/my-first-post/</guid>
+                <pubDate>Thu, 13 May 2021 14:55:10 &#43;0800</pubDate>
+                
+                    <author>mrqter@gmail.com (lintao)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>OpenApi3.0</title>
+                <link>http://lt7.top/posts/openapi3.0/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/openapi3.0/</guid>
+                <pubDate>Tue, 27 Mar 2018 21:46:00 &#43;0800</pubDate>
+                
+                    <author>mrqter@gmail.com (lintao)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;OpenAPI3.0是OpenApi规范的最新版本,&lt;a href=&#34;https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md&#34;&gt;openapi3完整语法参考&lt;/a&gt;,现在大多数应用只支持2.0规范，可以在这里查看2.0&lt;/p&gt;
+&lt;h3 id=&#34;文档结构&#34;&gt;文档结构&lt;/h3&gt;
+&lt;p&gt;整个Openapi文档由下列字段组成，openapi,info,paths对象想都是必选，其他字段都是可选。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;openapi&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;描述openapi使用的版本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;info&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Info Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;文档信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;servers&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Server Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;用于描述接口地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paths&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Paths Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;api的路径描述&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;components&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Components Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;定义模型，对象重用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;security&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Security Requirement]&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tags&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Tag Object]&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;定义标签，可以将不同路径下同一标签的api集合显示&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;externalDocs&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;External Documentation Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;外部文档&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;定义文档信息&#34;&gt;定义文档信息&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;openapi: 3.0.0
+info:
+  description: 文档描述支持部分markdown语法，例如
+   ![百度](http://www.baidu.com) 
+  version: &amp;quot;1.0.0&amp;quot;
+  title: OpenApi 3.0
+  termsOfService: &#39;http://swagger.io/terms/&#39;
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: &#39;http://www.apache.org/licenses/LICENSE-2.0.html
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####OpenAPI规范的版本号
+在2.0我们使用&lt;code&gt;swagger: &amp;quot;2.0&amp;quot;&lt;/code&gt;描述API文档所使用的OpenApi版本，在3.0之后将改为&lt;code&gt;openapi: 3.0.0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####API描述信息
+&lt;code&gt;info&lt;/code&gt;对象用于描述文档当信息。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文档标题，必填字段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文档描述，这个字段支持CommonMark语法&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;termsOfService&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;API的服务条款的网址。 必须采用URL格式。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;contact&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Contact Object&lt;/td&gt;
+&lt;td&gt;文档作者的联系方式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;license&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;License Object&lt;/td&gt;
+&lt;td&gt;API的许可证信息。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;version&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文档版本，必填字段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;Contact&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;联系人名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;联系人网址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;联系人的邮件地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;license&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;必填字段，许可名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;用于该API的许可证的URL。 必须采用URL格式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;定义服务器地址&#34;&gt;定义服务器地址&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;servers&lt;/code&gt;关键词是3.0新增特性，通过servers关键词我们可以定义多个服务器地址方便切换测试环境和生成环境&lt;a href=&#34;https://swagger.io/docs/specification/api-host-and-base-path/&#34;&gt;更多参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15222430425205.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;servers:
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.example.com
+    description: Optional server description, e.g. Internal staging server for testing
+        
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;定义api路径&#34;&gt;定义API路径&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field Name&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$ref&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;summary&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;get&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;put&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;post&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;delete&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;options&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;head&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;patch&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;trace&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Operation Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;servers&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Server Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parameters&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Parameter Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field Name&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;tags&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;[&lt;code&gt;string&lt;/code&gt;]&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;summary&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;externalDocs&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;[External Documentation Object]&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;operationId&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parameters&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Parameter Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;requestBody&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Request Body Object&lt;/td&gt;
+&lt;td&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;responses&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Responses Object&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;REQUIRED&lt;/strong&gt;. callbacks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;deprecated&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;boolean&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;security&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Security Requirement Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;servers&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Server Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;paths对象用于定义api中的各个路径，一份openap文档必须有一个paths对象，最简单的例子如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+      tags:
+        - user
+      summary: get user list
+      operationId: getUsers
+      parameters: 
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: offset 
+          required: true
+          schema:
+            type: string
+      responses:
+        &#39;200&#39;:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: &#39;#/components/schemas/User&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;paths&lt;/code&gt;中每个路径以/开头，路径必须有一&lt;code&gt;responses&lt;/code&gt;属性。在同一路径下不同操作定义如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /users:
+    get:
+      tags:
+        - user
+      responses:
+        &#39;200&#39;:
+    post: 
+      tags:
+        - user
+      responses:
+        &#39;200&#39;:
+    delete: 
+       tags:
+        - user
+      responses:
+        &#39;200&#39;:
+    put: 
+      tags:
+        - user  
+      responses:
+        &#39;200&#39;:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在2.0我们可以用&lt;code&gt;Consumes, Produces&lt;/code&gt;来定义请求或者响应的数据格式，在3.0中我们统一使用关键字&lt;code&gt;content&lt;/code&gt;定义数据格式&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/user:
+    post:
+      tags:
+        - user
+      summary: Create user
+      description:
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: &#39;#/components/schemas/User&#39;
+        description: Created user object
+        required: true
+      responses:
+        &#39;200&#39;:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: &#39;#/components/schemas/User&#39;
+      
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;components&lt;/code&gt;对象替换掉2.0中的&lt;code&gt;definitions&lt;/code&gt;，并规范了对象的重用。&lt;/p&gt;
+&lt;p&gt;####路径&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;paths定义了API中的各个路径,以及这些路径的HTTP方法。 例如，GET /user 可以描述为：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+  /user/{id}:
+    put:
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;在同一路径下不同的操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;正确方式&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+    put:
+    post:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;错误方式&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+  /users:
+    post:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####请求参数
+请求参数可以通过拼接路径/users/{userId}，查询字符串(/users?role=admin),将参数放到请求头X-CustomHeader: Value，你可以定义参数数据类型，格式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;拼接路径参数 &lt;code&gt;GET /users/2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /user/{userId}:
+    get:
+      summary: Returns a user by ID.
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: Parameter description in CommonMark or HTML.
+          schema:
+            type : integer
+            format: int64
+            minimum: 1
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;查询参数 &lt;code&gt;GET /users?role=value&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+      parameters:
+        - in: query
+          name: role
+          schema:
+            type: string
+            enum: [user, poweruser, admin]
+          required: true
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;将请求参数放到请求头&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /user:
+    get:
+      summary: Checks if the server is alive
+      parameters:
+        - in: header
+          name: X-Request-ID
+          schema:
+            type: string
+            format: uuid
+          required: true
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;将请求参数放到request body，可以通过关键字requestBody来描述body的内容,在content关键词下定义Media Type&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;application/json
+application/xml
+application/x-www-form-urlencoded
+multipart/form-data
+text/plain; charset=utf-8
+text/html
+application/pdf
+image/png
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;/user:
+  post:
+    summary: 创建一个用户
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;文件上传&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;/file:
+  post:
+      summary: 文件上传.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                fileName:
+                  type: integer
+                file:
+                  type: string
+                  format: binary
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####返回值&lt;/p&gt;
+&lt;p&gt;API规范需要指定所有API操作的Responses。 每个操作必须至少定义一个Responses，通常是成功的Responses。 Responses由其HTTP状态代码和Responses正文和/或标题中返回的数据定义。
+这是一个最简单的例子:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /ping:
+    get:
+      responses:
+        &#39;200&#39;:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: pong
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;API可以用各种数据类型(json/xml)进行响应。 JSON是数据交换中最常用的格式，但不是唯一可能的格式。&lt;/p&gt;
+&lt;p&gt;要指定Response的数据类型，在content关键字下说明。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /users:
+    get:
+      summary: Get all users
+      responses:
+        &#39;200&#39;:
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                $ref: &#39;#/components/schemas/ArrayOfUsers&#39;
+            application/xml:
+              schema:
+                $ref: &#39;#/components/schemas/ArrayOfUsers&#39;
+            text/plain:
+              schema:
+                type: string
+
+  # This operation returns image
+  /logo:
+    get:
+      summary: Get the logo image
+      responses:
+        &#39;200&#39;:
+          description: Logo image in PNG format
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####HTTP Status Codes
+在Response下，每个Response定义以状态码（例如200或404）开始。操作通常会返回一个成功的状态码和一个或多个错误状态。 要定义一系列Response代码，您可以使用以下范围定义：1XX，2XX，3XX，4XX和5XX。 如果使用显式代码定义响应范围，则显式代码定义优先于该代码的范围定义。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;responses:
+        &#39;200&#39;:
+          description: OK
+        &#39;400&#39;:
+          description: Bad request. User ID must be an integer and larger than 0.
+        &#39;401&#39;:
+          description: Authorization information is missing or invalid.
+        &#39;404&#39;:
+          description: A user with the specified ID was not found.
+        &#39;5XX&#39;:
+          description: Unexpected error.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####Response Headers&lt;/p&gt;
+&lt;p&gt;来自API的响应可以包含自定义标题，以提供有关API调用结果的附加信息。 例如，限速API可以通过响应标头提供速率限制状态，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;HTTP 1/1 200 OK
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 99
+X-RateLimit-Reset: 2016-10-12T11:00:00Z
+
+{ ... }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;你可以像这样定义响应headers&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paths:
+  /ping:
+    get:
+      summary: Checks if the server is alive.
+      responses:
+        &#39;200&#39;:
+          description: OK
+          headers:
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+              description: Request limit per hour.
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+              description: The number of requests left for the time window.
+            X-RateLimit-Reset:
+              schema:
+                type: string
+                format: date-time
+              description: The UTC date/time at which the current rate limit window resets.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####Response Body
+schema关键字用于描述Response Body，schema可以这样定义：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用一个 object或者 array ,通常用于JSON或者XML&lt;/li&gt;
+&lt;li&gt;原始数据类型，如数字或字符串 - 用于纯文本响应，&lt;/li&gt;
+&lt;li&gt;一个文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;responses:
+        &#39;200&#39;:
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  username:
+                    type: string
+                    description: The user name. 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####重用
+如果多个操作返回相同的响应（状态码和数据），则可以在全局components对象的响应部分中定义它，然后通过$ref在操作级别引用该定义。 这对于具有相同状态代码和响应主体的错误响应非常有用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;responses:
+        &#39;200&#39;:
+          description: A User object
+          content:
+            application/json:
+              schema:
+                $ref: &#39;#/components/schemas/user&#39;
+components:
+  schemas:
+    user:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        password:
+          type: string
+          description: 密码
+        name:
+          type: string
+          description: 用户
+        avator:
+          type: string
+          description: 头像
+          default: xxxx
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;在请求时我们也可以使用定义好的schema:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;post:
+      summary: 创建用户.
+      tags:
+        - 用户
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: &#39;#/components/schemas/user&#39;
+      responses:
+        &#39;200&#39;:
+          description: 操作结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+&lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>OpenApi2.0</title>
@@ -480,6 +1226,55 @@ definitions:
       - id: 114
         title: Phone
 &lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>使用Swagger生成API文档</title>
+                <link>http://lt7.top/posts/%E4%BD%BF%E7%94%A8swagger%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/</link>
+                <guid isPermaLink="true">http://lt7.top/posts/%E4%BD%BF%E7%94%A8swagger%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/</guid>
+                <pubDate>Sun, 18 Mar 2018 21:04:40 &#43;0800</pubDate>
+                
+                    <author>mrqter@gmail.com (lintao)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;swagger是一个款强大的API文档生成工具集，他分为swagger-ui，swagger-codegen，swagger-editor。通过这三个工具我们可以编写非常完善Restful API文档。&lt;/p&gt;
+&lt;p&gt;####swagger-ui
+swagger-ui顾名思义这个工具就是用来显示编写好的api文档，这个工具通过解析编写好的json文档显示一个web页面。
+&lt;img src=&#34;http://7u2kla.com1.z0.glb.clouddn.com/15213791666907.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;通过docker安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker pull swaggerapi/swagger-ui
+docker run -p 80:8080 swaggerapi/swagger-ui
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###swagger-editor
+swagger-editor是一个编辑器，可以实时预览修改结果,不过这编辑器对中文支持非常不友好，建议在其他编辑器里写好后再粘贴进来查看语法是否错误
+&lt;img src=&#34;http://7u2kla.com1.z0.glb.clouddn.com/15213793329758.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;同样通过docker安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker pull swaggerapi/swagger-editor
+docker run -d -p 80:8080 swaggerapi/swagger-editor
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###swagger-codegen
+swagger-codegen工具是可以通过编辑好的api(yaml文件)文档直接生成各种后端的代码。现在支持的语言有:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; C# (ASP.NET Core, NancyFx), C++ (Pistache, 
+ Restbed), Erlang, Go, Haskell (Servant), Java 
+ (MSF4J, Spring, Undertow, JAX-RS: CDI, CXF, 
+ Inflector, RestEasy, Play Framework, PKMST), 
+ Kotlin, PHP (Lumen, Slim, Silex, Symfony, Zend 
+ Expressive), Python (Flask), NodeJS, Ruby 
+ (Sinatra, Rails5), Rust (rust-server), Scala 
+ (Finch, Lagom, Scalatra)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###本文将通过openapi3规范编写api文档:
+####OpenAPI规范&lt;/p&gt;
+</description>
                 
                 
                 
