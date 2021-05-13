@@ -5,13 +5,13 @@ set -e
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
-# Build the project.
-hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
+# # Build the project.
+# hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 
-# Go To Public folder
-cd public
+# # Go To Public folder
+# cd public
 
-# Add changes to git.
+# # Add changes to git.
 git add .
 
 # Commit changes.
